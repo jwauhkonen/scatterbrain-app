@@ -36,3 +36,7 @@ Scatterbrain.Routers.Router = Backbone.Router.extend ({
 	}
 	
 });
+
+$(function ($) {
+	$('#sample-song').annotator();
+});
