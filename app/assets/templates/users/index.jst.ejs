@@ -1,7 +1,24 @@
 <h1>All Users</h1>
 
-<ul>
-	<% users.each(function(user) { %>
-		<li><a href="#/users/<%= user.id %>"> <%= user.get('email') %></a></li>
-	<% }); %>
-</ul>
+<div class="panel panel-default">
+	<div class="panel-heading">Top Contributors</div>
+	<table class="table">
+		
+		<thead>
+			<tr>
+				<th>Email</th>
+				<th>Tags</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<% users.each(function(user) { %>
+				<tr>
+					<td><a href="#/users/<%= user.id %>"> <%= user.get('email') %></td>
+					<td>0</td>
+				</tr>
+			<% }) %>
+		</tbody>
+		
+	</table>
+</div>
