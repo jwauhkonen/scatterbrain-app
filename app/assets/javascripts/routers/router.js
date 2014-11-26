@@ -5,7 +5,8 @@ Scatterbrain.Routers.Router = Backbone.Router.extend ({
 	
 	routes: {
 		"": "homePage",
-		"users": "usersIndex"
+		"users": "usersIndex",
+		"users/:id": "userShow"
 	},
 	
 	homePage: function () {
@@ -17,6 +18,12 @@ Scatterbrain.Routers.Router = Backbone.Router.extend ({
 		Scatterbrain.Collections.users.fetch();
 		var indexView = new Scatterbrain.Views.UsersIndex({collection: Scatterbrain.Collections.users});
 		this._swapView(indexView);
+	},
+	
+	userShow: function (id) {
+		var user = Scatterbrain.Collections.users.getOrFetch(id);
+		var showView = new Scatterbrain.Views.UserShow({model: user});
+		this._swapView(showView);
 	},
 	
 	_swapView: function (view) {
