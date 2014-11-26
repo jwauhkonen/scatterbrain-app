@@ -34,6 +34,12 @@ Scatterbrain.Routers.Router = Backbone.Router.extend ({
 		this._swapView(indexView);
 	},
 	
+	songShow: function (id) {
+		var song = Scatterbrain.Collections.songs.getOrFetch(id);
+		var showView = new Scatterbrain.Views.SongShow({model: song});
+		this._swapView(showView);
+	},
+	
 	_swapView: function (view) {
 		if (this._currentView) {
 			this._currentView.remove();
