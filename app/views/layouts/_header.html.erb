@@ -8,7 +8,7 @@
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<% if signed_in? %>
-				<li class="nav-item">Welcome, <%= current_user.email %>!</li>
+				<li class="nav-item"><a href="#/users/<%= current_user.id %>">  Welcome, <%= current_user.email %>!</a></li>
 				<li><%= link_to "Sign Out", session_url, method: :delete %></li>
 			<% else %>
 				<li><%= link_to "Sign In", new_session_url%></li>
