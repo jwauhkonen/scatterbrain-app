@@ -28,6 +28,12 @@ Scatterbrain.Routers.Router = Backbone.Router.extend ({
 		this._swapView(showView);
 	},
 	
+	songsIndex: function () {
+		Scatterbrain.Collections.songs.fetch();
+		var indexView = new Scatterbrain.Views.SongsIndex({collection: Scatterbrain.Collections.songs});
+		this._swapView(indexView);
+	},
+	
 	_swapView: function (view) {
 		if (this._currentView) {
 			this._currentView.remove();
@@ -37,8 +43,4 @@ Scatterbrain.Routers.Router = Backbone.Router.extend ({
 		this._currentView = view;
 	}
 	
-});
-
-$(function ($) {
-	$('#sample-song').annotator();
 });

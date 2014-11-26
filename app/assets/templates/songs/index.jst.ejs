@@ -1,18 +1,18 @@
 <div class="panel panel-default">
-	<div class="panel-heading">Top Contributors</div>
+	<div class="panel-heading">Top Songs</div>
 	<table class="table">
 		
 		<thead>
 			<tr>
-				<th>Email</th>
-				<th>Tags</th>
+				<th>Title</th>
+				<th>Top Tag</th>
 			</tr>
 		</thead>
 		
 		<tbody>
-			<% users.each(function(user) { %>
+			<% songs.each(function(song) { %>
 				<tr>
-					<td><a href="#/users/<%= user.id %>"> <%= user.get('email') %></td>
+					<td><a href="#/songs/<%= song.id %>"> <%= song.get('title') %></td>
 					<td>Not Implemented</td>
 				</tr>
 			<% }) %>
