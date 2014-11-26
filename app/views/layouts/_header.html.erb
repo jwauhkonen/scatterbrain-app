@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default" role="navigation">
+	<a class="navbar-brand" href="">Scatterbrain</a>
+	<div class="navbar-collapse collapse">
+		<ul class="nav navbar-nav navbar-left">
+			<% if signed_in? %>
+				<li><a href="#/users">Top Contributors</a></li>
+			<% end %>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<% if signed_in? %>
+				<li><%= link_to "Sign Out", session_url, method: :delete %></li>
+			<% else %>
+				<li><%= link_to "Sign In", new_session_url%></li>
+				<li><%= link_to "Sign Up", new_user_url%></li>
+			<% end %>
+		</ul>
+	</div>
+</nav>
+
+
+<% if flash[:errors] %>
+	<div class="alert alert-warning alert-dismissable" role="alert">
+		<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		<%= flash[:errors].join("<br>").html_safe %>
+	</div>
+
+<% end %>

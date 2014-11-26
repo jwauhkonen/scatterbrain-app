@@ -1,0 +1,21 @@
+<div class="signup-page">
+
+	<h1>Sign Up</h1>
+
+	<form action="/users" class="signup-form" method="post">
+	
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	
+		<label class="form-field">Email
+			<input type="text" name="user[email]">
+		</label><br>
+	
+		<label class="form-field">Password
+			<input type="password" name="user[password]">
+		</label><br>
+	
+		<input type="submit" value="submit" class="btn btn-primary"><br>
+
+	</form>
+	
+</div>

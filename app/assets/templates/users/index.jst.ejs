@@ -1,0 +1,7 @@
+<h1>All Users</h1>
+
+<ul>
+	<% users.each(function(user) { %>
+		<li><%= user.get('email') %></li>
+	<% }); %>
+</ul>
