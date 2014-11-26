@@ -6,7 +6,9 @@ Scatterbrain.Routers.Router = Backbone.Router.extend ({
 	routes: {
 		"": "homePage",
 		"users": "usersIndex",
-		"users/:id": "userShow"
+		"users/:id": "userShow",
+		"songs": "songsIndex",
+		"songs/:id": "songShow"
 	},
 	
 	homePage: function () {
