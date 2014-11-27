@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141126005732) do
+ActiveRecord::Schema.define(version: 20141126222948) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "segments", force: true do |t|
+    t.integer  "song_id",    null: false
+    t.text     "quote",      null: false
+    t.integer  "start_idx",  null: false
+    t.integer  "end_idx",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "songs", force: true do |t|
     t.string   "title",      null: false
