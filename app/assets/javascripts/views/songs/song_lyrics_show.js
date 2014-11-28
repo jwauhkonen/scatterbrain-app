@@ -1,9 +1,12 @@
 Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 	template: JST["songs/lyrics_show"],
 	
+	initialize: function () {
+		
+	},
+	
 	events: {
-		"select p": "handleSelect"
-		// this works for click, how does select work?
+		"select .taggable": "handleSelect"
 	},
 	
 	render: function () {
@@ -13,7 +16,9 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 	},
 	
 	handleSelect: function (event) {
-		console.log("you selected some text!")
+		event.preventDefault();
+		console.log("you selected some text!");
 	}
+	
 	
 });
