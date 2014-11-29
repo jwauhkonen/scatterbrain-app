@@ -1,0 +1,24 @@
+<h1><%= tag.get('name') %> lyrics</h1>
+
+<div class="panel panel-default">
+	<div class="panel-heading">Tags</div>
+	<table class="table">
+		
+		<thead>
+			<tr>
+				<th>Quote</th>
+				<th>Song</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<% tag.segments().each(function(segment) { %>
+				<tr>
+					<td><a href="#/songs/<%= segment.get('song_id') %>"> <%= segment.get('quote') %></td>
+					<td>Not Implemented</td>
+				</tr>
+			<% }) %>
+		</tbody>
+		
+	</table>
+</div>

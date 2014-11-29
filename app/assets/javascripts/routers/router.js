@@ -56,7 +56,9 @@ Scatterbrain.Routers.Router = Backbone.Router.extend ({
 	},
 	
 	tagShow: function (id) {
-		
+		var tag = Scatterbrain.Collections.tags.getOrFetch(id);
+		var showView = new Scatterbrain.Views.TagShow({model: tag});
+		this._swapView(showView);
 	},
 	
 	_swapView: function (view) {

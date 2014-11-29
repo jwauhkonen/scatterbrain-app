@@ -8,7 +8,8 @@ module Api
     
     def show
       @tag = Tag.find(params[:id])
-      render json: @tag
+      @segments = @tag.segments
+      render :show
     end
     
   end
