@@ -6,7 +6,8 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 	},
 	
 	events: {
-		"select .taggable": "handleSelect"
+		"select .taggable": "handleSelect",
+		"click button.create-segment": "createSegment"
 	},
 	
 	render: function () {
@@ -34,6 +35,7 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 		// also figure out where I'll want to do this. I'll probably want to make a box
 		// pop up whenever text gets selected in the .taggable box.
 		// for now I'll just put a button in there that creates the segment object.
+		console.log("this will create a segment!");
 	}
 	
 });
