@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show, :update, :destroy]
     resources :songs, only: [:index, :show]
     resources :segments, only: [:index, :create]
+    resources :tags, only: [:index, :show]
   end
 
 end

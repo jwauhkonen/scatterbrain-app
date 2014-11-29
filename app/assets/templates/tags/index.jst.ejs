@@ -1,0 +1,24 @@
+<div class="panel panel-default">
+	<div class="panel-heading">All Tags</div>
+	<table class="table">
+		
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Segment</th>
+				<th>Song</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<% tags.each(function(tag) { %>
+				<tr>
+					<td><a href="#/tags/<%= tag.id %>"><%= tag.get('name') %></td>
+					<td>Not Implemented</td>
+					<td>Not Implemented</td>
+				</tr>
+			<% }) %>
+		</tbody>
+		
+	</table>
+</div>
