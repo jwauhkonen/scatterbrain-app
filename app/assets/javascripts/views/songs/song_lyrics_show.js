@@ -18,7 +18,24 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 	handleSelect: function (event) {
 		event.preventDefault();
 		console.log("you selected some text!");
-	}
+		var text = window.getSelection().toString();
+		debugger
+		console.log(text);
+		
+		var fullString = document.getElementsByClassName("taggable")[0].textContent
+	},
 	
+	createSegment: function () {
+		var fullString = document.getElementsByClassName("taggable")[0].textContent;
+		var range = window.getSelection();
+		var startPosition = fullString.search(range);
+		var quote = range.toString();
+		var endPosition = parseInt(quote.length) + parseInt(startPosition);
+		// Create new segment object from above properties
+		// before this happens I need to set up associations between songs and segments
+		// also figure out where I'll want to do this. I'll probably want to make a box
+		// pop up whenever text gets selected in the .taggable box.
+		// for now I'll just put a button in there that creates the segment object.
+	}
 	
 });
