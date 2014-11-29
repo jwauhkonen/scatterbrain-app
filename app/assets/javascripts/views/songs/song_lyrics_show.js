@@ -36,6 +36,7 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 		// pop up whenever text gets selected in the .taggable box.
 		// for now I'll just put a button in there that creates the segment object.
 		console.log("this will create a segment!");
+		$('.tag-popup').addClass('hidden');
 	}
 	
 });

@@ -25,8 +25,6 @@ Scatterbrain.Views.SongShow = Backbone.CompositeView.extend ({
 	},
 	
 	createSegment: function () {
-		console.log("this does something");
-		var text = document.getSelection().toString();
-		console.log(text);
+		this.lyricsView.createSegment();
 	}
 });
