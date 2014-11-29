@@ -8,7 +8,8 @@ Scatterbrain.Routers.Router = Backbone.Router.extend ({
 		"users": "usersIndex",
 		"users/:id": "userShow",
 		"songs": "songsIndex",
-		"songs/:id": "songShow"
+		"songs/:id": "songShow",
+		"segments": "segmentsIndex"
 	},
 	
 	homePage: function () {
@@ -38,6 +39,12 @@ Scatterbrain.Routers.Router = Backbone.Router.extend ({
 		var song = Scatterbrain.Collections.songs.getOrFetch(id);
 		var showView = new Scatterbrain.Views.SongShow({model: song});
 		this._swapView(showView);
+	},
+	
+	segmentsIndex: function () {
+		Scatterbrain.Collections.segments.fetch();
+		var indexView = new Scatterbrain.Views.SegmentsIndex({collection: Scatterbrain.Collections.segments});
+		this._swapView(indexView);
 	},
 	
 	_swapView: function (view) {

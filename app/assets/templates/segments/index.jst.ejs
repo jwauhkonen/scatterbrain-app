@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+	<div class="panel-heading">Top Segments</div>
+	<table class="table">
+		
+		<thead>
+			<tr>
+				<th>Quote</th>
+				<th>Song</th>
+				<th>Top Tag</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<% segments.each(function(segment) { %>
+			<% segment.song().fetch() %>
+				<tr>
+					<td><%= segment.escape('quote') %></td>
+					<% if (segment.song()[0]) { %>
+						<td><%= segment.song()[0].escape('title')%><td>
+					<% } else { %>
+					    <td></td>
+					<% } %>
+					<td>Not Implemented</td>
+				</tr>
+			<% }) %>
+		</tbody>
+		
+	</table>
+</div>
