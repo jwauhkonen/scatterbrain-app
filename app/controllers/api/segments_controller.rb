@@ -3,8 +3,8 @@ module Api
   
     def index
       @segments = Segment.all
-      # render :index
-      render json: @segments
+      render :index
+      # render json: @segments
     end
   
     def create

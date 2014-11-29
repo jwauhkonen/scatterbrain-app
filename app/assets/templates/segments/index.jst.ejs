@@ -12,14 +12,9 @@
 		
 		<tbody>
 			<% segments.each(function(segment) { %>
-			<% segment.song().fetch() %>
 				<tr>
 					<td><%= segment.escape('quote') %></td>
-					<% if (segment.song()[0]) { %>
-						<td><%= segment.song()[0].escape('title')%><td>
-					<% } else { %>
-					    <td></td>
-					<% } %>
+					<td><a href="#/songs/<%= segment.get('song_id') %>"><%= segment.escape('song_title') %></td>
 					<td>Not Implemented</td>
 				</tr>
 			<% }) %>

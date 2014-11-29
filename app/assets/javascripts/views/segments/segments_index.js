@@ -8,7 +8,6 @@ Scatterbrain.Views.SegmentsIndex = Backbone.View.extend ({
 	render: function () {
 		var renderedContent = this.template({segments: this.collection});
 		this.$el.html(renderedContent);
-		debugger
 		return this;
 	}
 });
