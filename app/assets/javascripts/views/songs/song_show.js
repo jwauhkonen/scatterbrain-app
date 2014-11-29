@@ -2,7 +2,11 @@ Scatterbrain.Views.SongShow = Backbone.CompositeView.extend ({
 	template: JST["songs/show"],
 	
 	initialize: function () {
-		this.listenTo(this.model, "sync", this.render)
+		this.listenTo(this.model, "sync", this.render);
+	},
+	
+	events: {
+		"click .not-popup": "hidePopup"
 	},
 	
 	addLyrics: function () {
@@ -15,5 +19,9 @@ Scatterbrain.Views.SongShow = Backbone.CompositeView.extend ({
 		this.$el.html(renderedContent);
 		this.addLyrics();
 		return this;
+	},
+	
+	hidePopup: function () {
+		$('.tag-popup').addClass("hidden");
 	}
 });
