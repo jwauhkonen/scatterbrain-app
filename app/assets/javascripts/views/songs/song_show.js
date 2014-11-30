@@ -3,6 +3,7 @@ Scatterbrain.Views.SongShow = Backbone.CompositeView.extend ({
 	
 	initialize: function () {
 		this.listenTo(this.model, "sync", this.render);
+		this.listenTo(this.model, "sync", this.placeSegments)
 		this.lyricsView = new Scatterbrain.Views.SongLyricsShow({model: this.model});
 		this.popupView = new Scatterbrain.Views.SongPopupShow({model: this.model});
 	},
@@ -26,5 +27,9 @@ Scatterbrain.Views.SongShow = Backbone.CompositeView.extend ({
 	
 	createSegment: function () {
 		this.lyricsView.createSegment();
+	},
+	
+	placeSegments: function () {
+		this.lyricsView.placeSegments();
 	}
 });

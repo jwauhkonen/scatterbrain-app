@@ -12,12 +12,20 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 	render: function () {
 		var renderedContent = this.template({song: this.model});
 		this.$el.html(renderedContent);
-		this.placeSegments();
 		return this;
 	},
 	
 	placeSegments: function () {
 		console.log(this.model.segments());
+		var lyrics = document.getElementsByClassName("taggable")[0];
+		var segments = this.model.segments().models;
+		segments.forEach( function(segment) {
+			console.log(segment.get('quote'));
+		});
+		
+		var range = document.createRange();
+		range.selectNode(lyrics)
+		debugger
 	},
 	
 	handleSelect: function (event) {
