@@ -10,15 +10,21 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 	},
 	
 	render: function () {
-		var renderedContent = this.template({song: this.model, segments: this.model.segments()});
+		var renderedContent = this.template({song: this.model});
 		this.$el.html(renderedContent);
 		return this;
 	},
 	
 	placeSegments: function () {
-		$('textarea').highlightTextarea({
-			words: ['what']
+		tagArea = document.getElementsByClassName("taggable")[0]
+		this.model.segments().forEach( function (segment) {
+			tagArea.setSelectionRange(segment.get('start_idx'), segment.get('end_idx'));
+			tagText = window.getSelection();
+			
+			// get selection and convert selected area to highlighted thing w/ data id
+			debugger
 		});
+		
 	},
 	
 	handleSelect: function (event) {
