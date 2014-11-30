@@ -6,14 +6,18 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 	},
 	
 	events: {
-		"select .taggable": "handleSelect",
-		
+		"select .taggable": "handleSelect"
 	},
 	
 	render: function () {
 		var renderedContent = this.template({song: this.model});
 		this.$el.html(renderedContent);
+		this.placeSegments();
 		return this;
+	},
+	
+	placeSegments: function () {
+		console.log(this.model.segments());
 	},
 	
 	handleSelect: function (event) {
