@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :songs, only: [:index, :show]
     resources :segments, only: [:index, :create]
     resources :tags, only: [:index, :show]
+    resources :taggings, only: [:index, :create]
   end
 
 end

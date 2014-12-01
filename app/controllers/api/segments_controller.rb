@@ -13,7 +13,7 @@ module Api
       if @segment.save!
         flash.now[:errors] = "Lyric saved!"
       else
-        flash.new[:errors] = @segment.errors.full_messages
+        flash.now[:errors] = @segment.errors.full_messages
       end
     end
     

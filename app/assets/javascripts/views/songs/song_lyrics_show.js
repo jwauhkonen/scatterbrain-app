@@ -43,6 +43,9 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 			this.handleSelect();
 		} else {
 			$('.tag-popup').addClass('hidden')
+			if ($('.tag-popup').hasClass('new-segment')) {
+				$('.tag-popup').removeClass('new-segment');
+			};
 		}; 
 	},
 	
@@ -64,6 +67,7 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 	},
 	
 	createSegment: function () {
+		console.log('creating segment')
 		$('.tag-popup').addClass('hidden');
 		$('.tag-popup').removeClass('new-segment');
 		this.pendingSegment.save();
