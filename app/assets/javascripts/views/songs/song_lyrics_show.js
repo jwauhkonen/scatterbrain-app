@@ -83,12 +83,12 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 		console.log('creating segment')
 		$('.tag-popup').addClass('hidden').removeClass('new-segment');
 		var newSegment = this.pendingSegment;
+		var tagId = $(event.target).data('id');
 		newSegment.save({}, {
 			success: function () {
-				debugger
 				Scatterbrain.Collections.taggings.create({
 					segment_id: newSegment.id,
-					tag_id: $(event.target).data('id')
+					tag_id: tagId
 				});
 			}
 		});

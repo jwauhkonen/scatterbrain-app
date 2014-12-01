@@ -8,11 +8,9 @@ module Api
   
     def create
       @segment = Segment.new(segment_params)
-      # @tagging = @segment.taggings.new(tag_params)
       
       if @segment.save
         render json: @segment
-        @tagging
       else
         render json: @segment.errors.full_messages
       end

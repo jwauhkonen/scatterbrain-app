@@ -10,10 +10,10 @@ module Api
       @tagging = Tagging.new(tagging_params)
       @tagging.user_id = current_user.id
       
-      if @tagging.save!
-        flash.now[:errors] = "Tagged lyric!"
+      if @tagging.save
+        render json: @tagging
       else
-        flash.now[:errors] = @tagging.errors.full_messages
+        render json: @tagging.errors.full_messages
       end
     end
   
