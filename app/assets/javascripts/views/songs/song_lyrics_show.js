@@ -2,7 +2,7 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 	template: JST["songs/lyrics_show"],
 	
 	initialize: function () {
-		this.pendingSegment = new Scatterbrain.Models.Segment();
+		
 	},
 	
 	events: {
@@ -59,7 +59,9 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 		var quote = range.toString();
 		var endPosition = parseInt(quote.length) + parseInt(startPosition);
 		$('.segment-quote').html('"' + quote + '"');
-	
+		
+		this.pendingSegment = new Scatterbrain.Models.Segment();
+		debugger
 		this.pendingSegment.set({
 			song_id: this.model.id, quote: quote, start_idx: startPosition, end_idx: endPosition
 		})
@@ -70,7 +72,7 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 		console.log('creating segment')
 		$('.tag-popup').addClass('hidden');
 		$('.tag-popup').removeClass('new-segment');
-		this.pendingSegment.save();
+		this.pendingSegment.save({});
 		Scatterbrain.Collections.segments.add(this.pendingSegment);
 		this.model.fetch();
 		// getting 500 server error for some reason, but it still saves successfully

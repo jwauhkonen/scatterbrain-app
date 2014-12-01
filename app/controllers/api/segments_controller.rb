@@ -4,7 +4,6 @@ module Api
     def index
       @segments = Segment.all
       render :index
-      # render json: @segments
     end
   
     def create
@@ -15,6 +14,11 @@ module Api
       else
         flash.now[:errors] = @segment.errors.full_messages
       end
+    end
+    
+    def show
+      @segment = Segment.find(params[:id])
+      render json: @segment
     end
     
     private
