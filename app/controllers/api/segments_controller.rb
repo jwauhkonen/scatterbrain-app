@@ -18,7 +18,7 @@ module Api
     
     def show
       @segment = Segment.find(params[:id])
-      render json: @segment
+      render :show
     end
     
     private
