@@ -19,7 +19,7 @@ module Api
   
     private
   
-    def taggings_params
+    def tagging_params
       params.require(:tagging).permit(:segment_id, :tag_id, :user_id)
     end
   

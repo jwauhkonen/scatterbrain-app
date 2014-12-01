@@ -79,16 +79,24 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 		
 	},
 	
-	createSegment: function (options) {
+	createSegment: function () {
 		console.log('creating segment')
 		$('.tag-popup').addClass('hidden').removeClass('new-segment');
-		// this.pendingSegment.save({});
-		var newSegment = Scatterbrain.Collections.segments.create(this.pendingSegment, options);
+		var newSegment = this.pendingSegment;
+		newSegment.save({}, {
+			success: function () {
+				debugger
+				Scatterbrain.Collections.taggings.create({
+					segment_id: newSegment.id,
+					tag_id: $(event.target).data('id')
+				});
+			}
+		});
+		Scatterbrain.Collections.segments.add(newSegment);
 		
 		// fetch this.model in order to trigger page render and place segments
 		this.model.fetch();
 		// getting 500 server error for some reason, but it still saves successfully
-		return newSegment;
 	}
 	
 });
