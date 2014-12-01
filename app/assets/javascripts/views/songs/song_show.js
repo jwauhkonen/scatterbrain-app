@@ -49,6 +49,7 @@ Scatterbrain.Views.SongShow = Backbone.CompositeView.extend ({
 				segment_id: segmentId,
 				tag_id: tagId
 			});
+			$('.tag-popup').addClass('hidden');
 		}
 	}
 });
