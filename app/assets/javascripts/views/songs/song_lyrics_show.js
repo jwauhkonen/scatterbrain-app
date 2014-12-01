@@ -24,21 +24,14 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 		
 		var $seg = $('<a>');
 		$seg.text(segment.get('quote'));
-		// segNode.appendChild(document.createTextNode(segment.get('quote')));
-		// segNode.setAttribute('class', 'tagged');
-		// segNode.setAttribute('data-id', segment.id);
 		$seg.addClass('tagged');
 		$seg.data('id', segment.get('id'));
 		
 		range.deleteContents();
-		range.insertNode($seg[0]);
-
-		// get selection and convert selected area to highlighted thing w/ data id
-		
+		range.insertNode($seg[0]);		
 	},
 	
 	placeSegments: function () {
-		// var tagArea = document.getElementsByClassName("taggable")[0].firstChild
 		this.model.segments().each(this.placeSegment.bind(this));
 	},
 	
@@ -80,7 +73,6 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 	},
 	
 	createSegment: function () {
-		console.log('creating segment')
 		$('.tag-popup').addClass('hidden').removeClass('new-segment');
 		var newSegment = this.pendingSegment;
 		var tagId = $(event.target).data('id');

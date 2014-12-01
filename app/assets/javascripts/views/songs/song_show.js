@@ -9,7 +9,6 @@ Scatterbrain.Views.SongShow = Backbone.CompositeView.extend ({
 	},
 	
 	events: {
-		"click button.create-segment": "createSegment",
 		"click .tag-list": "createTagging"
 	},
 	
