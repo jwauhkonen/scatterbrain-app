@@ -48,6 +48,7 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 	
 	handleSelect: function () {
 		$('.tag-popup').removeClass('hidden');
+		$('.tag-popup').addClass('new-segment');
 		
 		var fullString = document.getElementsByClassName("taggable")[0].textContent;
 		var range = window.getSelection();
@@ -64,6 +65,7 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 	
 	createSegment: function () {
 		$('.tag-popup').addClass('hidden');
+		$('.tag-popup').removeClass('new-segment');
 		this.pendingSegment.save();
 		Scatterbrain.Collections.segments.add(this.pendingSegment);
 		this.model.fetch();

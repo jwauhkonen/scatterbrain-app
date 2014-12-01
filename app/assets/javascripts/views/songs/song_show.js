@@ -9,7 +9,8 @@ Scatterbrain.Views.SongShow = Backbone.CompositeView.extend ({
 	},
 	
 	events: {
-		"click button.create-segment": "createSegment"
+		"click button.create-segment": "createSegment",
+		"click .tag-list": "createTagging"
 	},
 	
 	render: function () {
@@ -26,5 +27,17 @@ Scatterbrain.Views.SongShow = Backbone.CompositeView.extend ({
 	
 	placeSegments: function () {
 		this.lyricsView.placeSegments();
+	},
+	
+	createTagging: function (event) {
+		event.preventDefault();
+		if ($('.tag-popup').hasClass('new-segment')) {
+			this.createSegment();
+			// taggingscollection.create new tagging with pendingsegment's id and currentTarget's data id
+		} else {
+			// having clicked on a segment I will have assigned $('.tag-popup') a segment-id, then
+			// make a new tagging in the same way.
+		}
+		debugger
 	}
 });
