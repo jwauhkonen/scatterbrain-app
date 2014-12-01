@@ -16,15 +16,21 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 	},
 	
 	placeSegments: function () {
-		// tagArea = document.getElementsByClassName("taggable")[0]
-// 		this.model.segments().forEach( function (segment) {
-// 			tagArea.setSelectionRange(segment.get('start_idx'), segment.get('end_idx'));
-// 			tagText = window.getSelection();
-//
-// 			// get selection and convert selected area to highlighted thing w/ data id
-//
-//
-// 		});
+		tagArea = document.getElementsByClassName("taggable")[0].firstChild
+		this.model.segments().forEach( function (segment) {
+			range = document.createRange();
+			range.setStart(tagArea, segment.get('start_idx'));
+			range.setEnd(tagArea, segment.get('end_idx'));
+			
+			segNode = document.createElement("a");
+			segNode.appendChild(document.createTextNode(segment.get('quote')));
+			range.deleteContents()
+			range.insertNode(segNode);
+
+			// get selection and convert selected area to highlighted thing w/ data id
+
+
+		});
 
 	},
 	
@@ -58,6 +64,7 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 		$('.tag-popup').addClass('hidden');
 		this.pendingSegment.save();
 		Scatterbrain.Collections.segments.add(this.pendingSegment);
+		this.placeSegments();
 		// getting 500 server error for some reason, but it still saves successfully
 	}
 	
