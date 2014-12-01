@@ -9,7 +9,8 @@ Scatterbrain.Views.SongShow = Backbone.CompositeView.extend ({
 	},
 	
 	events: {
-		"click .tag-list": "createTagging"
+		"click .tag-list": "createTagging",
+		"click .tagged": "revealPopup"
 	},
 	
 	render: function () {
@@ -18,6 +19,12 @@ Scatterbrain.Views.SongShow = Backbone.CompositeView.extend ({
 		this.addSubview('.lyrics', this.lyricsView);
 		this.addSubview('.tag-popup', this.popupView);
 		return this;
+	},
+	
+	revealPopup: function (event) {
+		$('.tag-popup').removeClass('hidden');
+		$('.segment-quote').html('"' + event.target.innerText + '"');
+		this.selectedSegment = $(event.target).data('id');
 	},
 	
 	createSegment: function () {
@@ -33,12 +40,15 @@ Scatterbrain.Views.SongShow = Backbone.CompositeView.extend ({
 		var that = this;
 		
 		if (this.$('.tag-popup').hasClass('new-segment')) {
+			//createSegment automatically creates associated tagging
 			var newSegment = this.createSegment();
-			
-			// taggingscollection.create new tagging with pendingsegment's id and currentTarget's data id
 		} else {
-			// having clicked on a segment I will have assigned $('.tag-popup') a segment-id, then
-			// make a new tagging in the same way.
+			var tagId = $(event.target).data('id');
+			var segmentId = this.selectedSegment;
+			Scatterbrain.Collections.taggings.create({
+				segment_id: segmentId,
+				tag_id: tagId
+			});
 		}
 	}
 });

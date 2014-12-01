@@ -25,7 +25,7 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 		var $seg = $('<a>');
 		$seg.text(segment.get('quote'));
 		$seg.addClass('tagged');
-		$seg.data('id', segment.get('id'));
+		$seg.attr('data-id', segment.get('id'));
 		
 		range.deleteContents();
 		range.insertNode($seg[0]);		
@@ -88,7 +88,6 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 		
 		// fetch this.model in order to trigger page render and place segments
 		this.model.fetch();
-		// getting 500 server error for some reason, but it still saves successfully
 	}
 	
 });
