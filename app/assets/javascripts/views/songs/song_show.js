@@ -9,7 +9,6 @@ Scatterbrain.Views.SongShow = Backbone.CompositeView.extend ({
 	},
 	
 	events: {
-		"click .not-popup": "hidePopup",
 		"click button.create-segment": "createSegment"
 	},
 	
@@ -19,10 +18,6 @@ Scatterbrain.Views.SongShow = Backbone.CompositeView.extend ({
 		this.addSubview('.lyrics', this.lyricsView);
 		this.addSubview('.tag-popup', this.popupView);
 		return this;
-	},
-	
-	hidePopup: function () {
-		$('.tag-popup').addClass("hidden");
 	},
 	
 	createSegment: function () {

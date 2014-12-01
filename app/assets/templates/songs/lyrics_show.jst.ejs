@@ -1,7 +1,3 @@
-<div class="taggable-holder"><textarea disabled class="taggable"><%= song.get('lyrics') %></textarea></div>
+<!-- <div class="taggable-holder"><textarea disabled class="taggable"><%= song.get('lyrics') %></textarea></div> -->
 
-<script>
-    $(function() {
-         $('textarea').height($('textarea').prop('scrollHeight'));
-    });
-</script>
+<div class="taggable"><%= song.get('lyrics') %></div>
