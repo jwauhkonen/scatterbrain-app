@@ -18,6 +18,7 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 	placeSegments: function () {
 		tagArea = document.getElementsByClassName("taggable")[0].firstChild
 		this.model.segments().forEach( function (segment) {
+			debugger
 			range = document.createRange();
 			range.setStart(tagArea, segment.get('start_idx'));
 			range.setEnd(tagArea, segment.get('end_idx'));
@@ -64,7 +65,7 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 		$('.tag-popup').addClass('hidden');
 		this.pendingSegment.save();
 		Scatterbrain.Collections.segments.add(this.pendingSegment);
-		this.placeSegments();
+		this.model.fetch();
 		// getting 500 server error for some reason, but it still saves successfully
 	}
 	
