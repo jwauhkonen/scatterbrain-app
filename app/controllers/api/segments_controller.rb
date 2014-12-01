@@ -8,11 +8,12 @@ module Api
   
     def create
       @segment = Segment.new(segment_params)
+      @tagging = @segment.taggings.new(tag_params)
       
-      if @segment.save!
-        flash.now[:errors] = "Lyric saved!"
+      if @segment.save
+        render json: @segment
       else
-        flash.now[:errors] = @segment.errors.full_messages
+        render json: @segment.errors.full_messages
       end
     end
     

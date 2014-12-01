@@ -21,8 +21,8 @@ Scatterbrain.Views.SongShow = Backbone.CompositeView.extend ({
 		return this;
 	},
 	
-	createSegment: function () {
-		this.lyricsView.createSegment();
+	createSegment: function (options) {
+		return this.lyricsView.createSegment(options);
 	},
 	
 	placeSegments: function () {
@@ -33,14 +33,12 @@ Scatterbrain.Views.SongShow = Backbone.CompositeView.extend ({
 		event.preventDefault();
 		var that = this;
 		
-		if ($('.tag-popup').hasClass('new-segment')) {
-			this.createSegment();
-			debugger
-			this.lyricsView.pendingSegment.fetch({
+		if (this.$('.tag-popup').hasClass('new-segment')) {
+			var newSegment = this.createSegment({
 				success: function () {
 					debugger
 					Scatterbrain.Collections.taggings.create({
-						segment_id: that.lyricsView.pendingSegment.id,
+						segment_id: newSegment.id,
 						tag_id: event.target.getAttribute('data-id')
 					});
 				}

@@ -2,7 +2,8 @@ module Api
   class TaggingsController < ApiController
   
     def index
-    
+      @taggings = Tagging.all
+      render json: @taggings
     end
   
     def create
