@@ -18,14 +18,15 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 	placeSegments: function () {
 		tagArea = document.getElementsByClassName("taggable")[0].firstChild
 		this.model.segments().forEach( function (segment) {
-			debugger
 			range = document.createRange();
 			range.setStart(tagArea, segment.get('start_idx'));
 			range.setEnd(tagArea, segment.get('end_idx'));
 			
 			segNode = document.createElement("a");
 			segNode.appendChild(document.createTextNode(segment.get('quote')));
-			range.deleteContents()
+			segNode.setAttribute('class', 'tagged');
+			segNode.setAttribute('data-id', segment.id);
+			range.deleteContents();
 			range.insertNode(segNode);
 
 			// get selection and convert selected area to highlighted thing w/ data id

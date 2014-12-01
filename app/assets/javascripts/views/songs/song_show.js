@@ -3,9 +3,9 @@ Scatterbrain.Views.SongShow = Backbone.CompositeView.extend ({
 	
 	initialize: function () {
 		this.listenTo(this.model, "sync", this.render);
-		this.listenTo(this.model, "sync", this.placeSegments)
+		this.listenTo(this.model, "sync", this.placeSegments);
 		this.lyricsView = new Scatterbrain.Views.SongLyricsShow({model: this.model});
-		this.popupView = new Scatterbrain.Views.SongPopupShow({model: this.model});
+		this.popupView = new Scatterbrain.Views.SongPopupShow({model: this.model, collection: this.collection});
 	},
 	
 	events: {

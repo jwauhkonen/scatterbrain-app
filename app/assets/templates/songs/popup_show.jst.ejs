@@ -2,6 +2,9 @@
 <h4 class="segment-quote"><h4>
 
 <ul class="tag-list">
+	<% tags.forEach( function (tag) { %> 
+		<li data-id="<%= tag.id %>"><%= tag.get('name') %></li> 
+	<% }); %>
 </ul>
 
-<button class="create-segment">Create Segment</button>
+<button class="create-segment">Tag Segment</button>
