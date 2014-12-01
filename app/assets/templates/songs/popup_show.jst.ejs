@@ -3,7 +3,7 @@
 
 <ul class="tag-list">
 	<% tags.forEach( function (tag) { %> 
-		<li data-id="<%= tag.id %>"><%= tag.get('name') %></li> 
+		<li class="tag-list-item" data-id="<%= tag.id %>"><%= tag.get('name') %></li> 
 	<% }); %>
 </ul>
 
