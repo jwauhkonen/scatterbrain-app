@@ -14,13 +14,11 @@ div#content {
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-
+	overflow: auto;
 }
 
 h1.title {
-	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
+	text-align: center;
 }
 
 .navbar.navbar-default {
