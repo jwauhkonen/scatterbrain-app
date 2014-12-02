@@ -17,7 +17,7 @@
 					<td><a href="#/songs/<%= segment.get('song_id') %>"> <%= segment.get('quote') %></td>
 					<td><%= segment.taggingsByTagId(tag.id).length %></td>
 				</tr>
-			<% }) %>
+			<% }); %>
 		</tbody>
 		
 	</table>
