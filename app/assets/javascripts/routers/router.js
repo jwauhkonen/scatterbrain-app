@@ -1,6 +1,17 @@
 Scatterbrain.Routers.Router = Backbone.Router.extend ({
 	initialize: function (options) {
 		this.$rootEl = options.$rootEl;
+		
+		emojify.setConfig({
+		    img_dir          : 'assets',  // Directory for emoji images
+		    ignored_tags     : {                // Ignore the following tags
+		        'SCRIPT'  : 1,
+		        'TEXTAREA': 1,
+		        'A'       : 1,
+		        'PRE'     : 1,
+		        'CODE'    : 1
+		    }
+		});
 	},
 	
 	routes: {

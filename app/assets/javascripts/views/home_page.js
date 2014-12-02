@@ -4,10 +4,8 @@ Scatterbrain.Views.HomePage = Backbone.CompositeView.extend ({
 	render: function () {
 		var renderedContent = this.template();
 		this.$el.html(renderedContent);
-		emojify.run();
 		return this;
 	}
-	
 	
 	
 	
