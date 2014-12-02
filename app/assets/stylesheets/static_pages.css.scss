@@ -3,23 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 html {
-	background: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ_nQ2s5_42Q-taewoxmFDQSFW4FkOu_RwtiughahgCWFGz0kMQ7g) no-repeat center center fixed;
+	background: url(http://www.psdgraphics.com/file/colorful-triangles-background.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 }
 
 div#content {
-	background: rgba(0, 0, 0, 0);
-	overflow: auto;
-	background: #cee3f4; /* Old browsers */
-	background: -moz-linear-gradient(top,  #cee3f4 0%, #99c4e7 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cee3f4), color-stop(100%,#99c4e7)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #cee3f4 0%,#99c4e7 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #cee3f4 0%,#99c4e7 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #cee3f4 0%,#99c4e7 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #cee3f4 0%,#99c4e7 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cee3f4', endColorstr='#99c4e7',GradientType=0 ); /* IE6-9 */
+	background: url(http://www.psdgraphics.com/file/colorful-triangles-background.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+
 }
 
 h1.title {
