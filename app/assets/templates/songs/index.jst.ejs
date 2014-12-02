@@ -12,7 +12,8 @@
 		<tbody>
 			<% songs.each(function(song) { %>
 				<tr>
-					<td><a href="#/songs/<%= song.id %>"> <%= song.get('title') %></td>
+					<td><a href="#/songs/<%= song.id %>"> <%= song.get('title') %>
+					                <span class="badge"><%= song.taggings().models.length %></span></td>
 					<% if (song.tags().models.length > 0) { %>
 						<td><a href="#/tags/<%= song.tags().models[0].id %>">                                                                         <%= song.tags().models[0].get('name') %></td>
 					<% } else { %>
