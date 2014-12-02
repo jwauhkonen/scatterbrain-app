@@ -33,6 +33,7 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 	
 	placeSegments: function () {
 		this.model.segments().each(this.placeSegment.bind(this));
+		
 	},
 	
 	checkForSelection: function (event) {
@@ -52,14 +53,21 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 	},
 	
 	handleSelect: function () {
-		$('.tag-popup').removeClass('hidden').addClass('new-segment');
-		
 		var fullString = document.getElementsByClassName("taggable")[0].textContent;
 		var range = window.getSelection();
 		var startPosition = fullString.search(range);
 		var quote = range.toString();
 		var endPosition = parseInt(quote.length) + parseInt(startPosition);
 		$('.segment-quote').html('"' + quote + '"');
+		
+		
+		// this.model.segments().models.forEach( function(segment) {
+// 			if ((segment.get('end_idx') > startPosition) && (segment.get('start_idx') < startPosition)) {
+// 				return
+// 			}
+// 		});
+		
+		$('.tag-popup').removeClass('hidden').addClass('new-segment');
 		
 		this.pendingSegment = new Scatterbrain.Models.Segment();
 		
@@ -68,7 +76,7 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 			quote: quote, 
 			start_idx: startPosition, 
 			end_idx: endPosition
-		})
+		});
 		
 	},
 	
