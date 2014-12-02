@@ -2,6 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+html {
+	background: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ_nQ2s5_42Q-taewoxmFDQSFW4FkOu_RwtiughahgCWFGz0kMQ7g) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+
+.title {
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	background: rgba(0, 0, 0, 0);
+}
+
+.navbar.navbar-default {
+	padding: 0;
+	margin: 0;
+	border-collapse: collapse;
+}
+
 #sign-out-button {
 	background: none;
 	border: none;
