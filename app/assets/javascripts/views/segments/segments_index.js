@@ -2,6 +2,7 @@ Scatterbrain.Views.SegmentsIndex = Backbone.View.extend ({
 	template: JST["segments/index"],
 	
 	initialize: function () {
+		this.listenTo(this.collection, "sync", this.sortSegmentsByTaggingCount)
 		this.listenTo(this.collection, "sync", this.sortSegmentTags);
 		this.listenTo(this.collection, "sync", this.render);
 	},
@@ -12,9 +13,21 @@ Scatterbrain.Views.SegmentsIndex = Backbone.View.extend ({
 		return this;
 	},
 	
+	sortSegmentsByTaggingCount: function () {
+		this.collection.models.sort( function(a, b) {
+			if (a.taggings().length > b.taggings().length) {
+				return -1;
+			}
+			if (a.taggings().length < b.taggings().length) {
+				return 1;
+			}
+			return 0;
+		})
+	},
+	
 	sortSegmentTags: function () {
 		this.collection.forEach( function (segment) {
-			segment.tags().models.sort(function (a, b) {
+			segment.tags().models.sort( function (a, b) {
 				if (segment.taggingsByTagId(a.id).length > segment.taggingsByTagId(b.id).length) {
 					return -1;
 				}
@@ -26,6 +39,4 @@ Scatterbrain.Views.SegmentsIndex = Backbone.View.extend ({
 		})
 	}
 	
-	// do sort tags here, similar to the other thing, then calculate the top tag in a similar way.
-	// I might need to also make a tagsByTaggingId or something.
 });
