@@ -60,23 +60,30 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 		var endPosition = parseInt(quote.length) + parseInt(startPosition);
 		$('.segment-quote').html('"' + quote + '"');
 		
-		
-		// this.model.segments().models.forEach( function(segment) {
-// 			if ((segment.get('end_idx') > startPosition) && (segment.get('start_idx') < startPosition)) {
-// 				return
-// 			}
-// 		});
-		
-		$('.tag-popup').removeClass('hidden').addClass('new-segment');
-		
-		this.pendingSegment = new Scatterbrain.Models.Segment();
-		
-		this.pendingSegment.set({
-			song_id: this.model.id, 
-			quote: quote, 
-			start_idx: startPosition, 
-			end_idx: endPosition
+		var overlap = false;
+		this.model.segments().models.forEach( function(segment) {
+			if ((segment.get('end_idx') > startPosition) && (segment.get('start_idx') < startPosition)) {
+				overlap = true;
+			}
+			if ((segment.get('start_idx') > startPosition) && (segment.get('start_idx') < endPosition)) {
+				overlap = true;
+			}
 		});
+		
+		if (overlap) {
+			$('.tag-popup').addClass('hidden');
+		} else {
+			$('.tag-popup').removeClass('hidden').addClass('new-segment');
+		
+			this.pendingSegment = new Scatterbrain.Models.Segment();
+		
+			this.pendingSegment.set({
+				song_id: this.model.id, 
+				quote: quote, 
+				start_idx: startPosition, 
+				end_idx: endPosition
+			});	
+		}
 		
 	},
 	
