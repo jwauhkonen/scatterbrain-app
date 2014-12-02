@@ -9,17 +9,33 @@ html {
 	-o-background-size: cover;
 }
 
-.title {
+div#content {
+	background: rgba(0, 0, 0, 0);
+	background-color: lightblue;
+	overflow: auto;
+}
+
+h1.title {
 	margin-left: auto;
 	margin-right: auto;
 	width: 50%;
 	background: rgba(0, 0, 0, 0);
+	background-color: lightblue;
 }
 
 .navbar.navbar-default {
 	padding: 0;
 	margin: 0;
 	border-collapse: collapse;
+}
+
+.panel.panel-default {
+	padding: 0;
+	margin: 0;
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
 }
 
 #sign-out-button {
