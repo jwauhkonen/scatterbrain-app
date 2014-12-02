@@ -22,5 +22,19 @@ Scatterbrain.Views.SongsIndex = Backbone.View.extend ({
 			}
 			return 0;
 		})
+	},
+	
+	sortSongTags: function () {
+		this.collection.forEach( function (song) {
+			song.tags().models.sort( function (a, b) {
+				if (segment.taggingsByTagId(a.id).length > segment.taggingsByTagId(b.id).length) {
+					return -1;
+				}
+				if (segment.taggingsByTagId(a.id).length < segment.taggingsByTagId(b.id).length) {
+					return 1;
+				}
+				return 0;
+			});	
+		})
 	}
 });
