@@ -23,20 +23,8 @@ Scatterbrain.Views.SegmentsIndex = Backbone.View.extend ({
 			}
 			return 0;
 		})
-	},
-	
-	sortSegmentTags: function () {
-		this.collection.forEach( function (segment) {
-			segment.tags().models.sort( function (a, b) {
-				if (segment.taggingsByTagId(a.id).length > segment.taggingsByTagId(b.id).length) {
-					return -1;
-				}
-				if (segment.taggingsByTagId(a.id).length < segment.taggingsByTagId(b.id).length) {
-					return 1;
-				}
-				return 0;
-			});	
-		})
 	}
+	
+	
 	
 });

@@ -18,6 +18,7 @@
 //= require scatterbrain
 //= require underscore
 //= require backbone
+//= require emojify
 //= require scatterbrain
 //= require_tree ../templates
 //= require_tree ./utils
