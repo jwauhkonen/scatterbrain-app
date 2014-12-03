@@ -1,5 +1,5 @@
 Scatterbrain.Views.HomeSongsIndex = Backbone.View.extend ({
-	template: JST["songs/index"],
+	template: JST["home_songs_index"],
 	
 	initialize: function () {
 		this.listenTo(this.collection, "sync", this.sortSongsByTaggingCount);
@@ -7,6 +7,7 @@ Scatterbrain.Views.HomeSongsIndex = Backbone.View.extend ({
 	},
 	
 	render: function () {
+		this.collection.reset(this.collection.first(5))
 		var renderedContent = this.template({songs: this.collection});
 		this.$el.html(renderedContent);
 		return this;
