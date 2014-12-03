@@ -42,6 +42,10 @@ Scatterbrain.Models.Tag = Backbone.Model.extend ({
 		return totalTaggings;
 	},
 	
+	taggingsBySegmentId: function (id) {
+		return this.taggings().where({segment_id: id});
+	},
+	
 	parse: function (response) {
 		if (response.segments) {
 			this.segments().set(response.segments, {parse: true});

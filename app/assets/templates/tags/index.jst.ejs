@@ -15,7 +15,13 @@
 			<% tags.each(function(tag) { %>
 				<tr>
 					<td><a href="#/tags/<%= tag.id %>"><%= tag.get('name') %></td> 
-					<td>Not Implemented</td>
+						
+					<% if (tag.segments().models.length > 0) { %>
+						<td><%= tag.segments().models[0].get('quote') %></td>
+					<% } else { %>
+						<td>No Segments Yet!</td>
+					<% } %>
+					
 					<% if (tag.songs().models.length > 0) { %>
 						<td><a href="#/songs/<%= tag.songs().models[0].id %>">
 						            <%= tag.songs().models[0].get('title') %></td>
