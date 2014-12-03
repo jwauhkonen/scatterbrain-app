@@ -19,6 +19,7 @@ div#content {
 
 h1.title {
 	text-align: center;
+	color: white;
 }
 
 .navbar.navbar-default {
@@ -43,11 +44,16 @@ h1.title {
 	color: blue;
 }
 
+h1.song-title {
+	color: white;
+}
+
 .taggable {
 	width: 500px;
 	white-space: pre;
 	outline: none;
 	resize: none;
+	color: white;
 }
 
 .tag-popup {

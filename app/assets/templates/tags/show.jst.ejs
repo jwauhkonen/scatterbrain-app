@@ -1,12 +1,12 @@
 <h1 class="title"> Most <%= tag.get('name') %> lyrics</h1>
 
 <div class="panel panel-default">
-	<div class="panel-heading">Tags</div>
 	<table class="table">
 		
 		<thead>
 			<tr>
 				<th>Quote</th>
+				<th>Song</th>
 				<th># Tags</th>
 			</tr>
 		</thead>
@@ -15,6 +15,7 @@
 			<% tag.segments().each(function(segment) { %>
 				<tr>
 					<td><a href="#/songs/<%= segment.get('song_id') %>"> <%= segment.get('quote') %></td>
+					<td><a href="#/songs/<%= segment.get('song_id') %>"> <%= segment.get('song_title') %></td>
 					<td><%= segment.taggingsByTagId(tag.id).length %></td>
 				</tr>
 			<% }); %>
