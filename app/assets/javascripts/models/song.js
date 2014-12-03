@@ -25,6 +25,10 @@ Scatterbrain.Models.Song = Backbone.Model.extend ({
 		return this._tags;
 	},
 	
+	taggingsByTagId: function (id) {
+		return this.taggings().where({tag_id: id});
+	},
+	
 	parse: function (response) {
 		if (response.segments) {
 			this.segments().set(response.segments, {parse: true});

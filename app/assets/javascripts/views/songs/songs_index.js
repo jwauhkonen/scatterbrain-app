@@ -3,6 +3,7 @@ Scatterbrain.Views.SongsIndex = Backbone.View.extend ({
 	
 	initialize: function () {
 		this.listenTo(this.collection, "sync", this.sortSongsByTaggingCount);
+		this.listenTo(this.collection, "sync", this.sortSongTags);
 		this.listenTo(this.collection, "sync", this.render);
 	},
 	
@@ -24,14 +25,13 @@ Scatterbrain.Views.SongsIndex = Backbone.View.extend ({
 		})
 	},
 	
-	// This doesn't make any sense and needs to be fixed!
 	sortSongTags: function () {
 		this.collection.forEach( function (song) {
 			song.tags().models.sort( function (a, b) {
-				if (segment.taggingsByTagId(a.id).length > segment.taggingsByTagId(b.id).length) {
+				if (song.taggingsByTagId(a.id).length > song.taggingsByTagId(b.id).length) {
 					return -1;
 				}
-				if (segment.taggingsByTagId(a.id).length < segment.taggingsByTagId(b.id).length) {
+				if (song.taggingsByTagId(a.id).length < song.taggingsByTagId(b.id).length) {
 					return 1;
 				}
 				return 0;
