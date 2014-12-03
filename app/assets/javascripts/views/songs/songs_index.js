@@ -24,6 +24,7 @@ Scatterbrain.Views.SongsIndex = Backbone.View.extend ({
 		})
 	},
 	
+	// This doesn't make any sense and needs to be fixed!
 	sortSongTags: function () {
 		this.collection.forEach( function (song) {
 			song.tags().models.sort( function (a, b) {

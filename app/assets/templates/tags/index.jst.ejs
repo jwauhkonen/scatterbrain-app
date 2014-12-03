@@ -14,9 +14,14 @@
 		<tbody>
 			<% tags.each(function(tag) { %>
 				<tr>
-					<td><a href="#/tags/<%= tag.id %>"><%= tag.get('name') %></td>
+					<td><a href="#/tags/<%= tag.id %>"><%= tag.get('name') %></td> 
 					<td>Not Implemented</td>
-					<td>Not Implemented</td>
+					<% if (tag.songs().models.length > 0) { %>
+						<td><a href="#/songs/<%= tag.songs().models[0].id %>">
+						            <%= tag.songs().models[0].get('title') %></td>
+					<% } else { %>
+						<td>No Songs Yet!</td>
+					<% } %>
 				</tr>
 			<% }) %>
 		</tbody>

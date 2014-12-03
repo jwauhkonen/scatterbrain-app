@@ -17,6 +17,14 @@ Scatterbrain.Models.Tag = Backbone.Model.extend ({
 		return this._songs;
 	},
 	
+	taggings: function () {
+		if (!this._taggings) {
+			this._taggings = new Scatterbrain.Collections.Taggings([], {tag: this});
+		}
+		
+		return this._taggings;
+	},
+	
 	taggingsBySongId: function (id) {
 		return this.taggings().where({song_id: id})
 	},
@@ -30,6 +38,11 @@ Scatterbrain.Models.Tag = Backbone.Model.extend ({
 		if (response.songs) {
 			this.songs().set(response.songs, {parse: true});
 			delete response.songs;
+		}
+		
+		if (response.taggings) {
+			this.taggings().set(response.taggings, {parse: true});
+			delete response.taggings;
 		}
 		return response;
 	}
