@@ -20,6 +20,10 @@
 	margin: auto;
 }
 
+h3.form-header {
+	color: white;
+}
+
 h1.sign-in-or-up-title {
 	background: url(http://www.psdgraphics.com/file/colorful-triangles-background.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
@@ -39,6 +43,11 @@ label.form-field {
 }
 
 input.btn.btn-primary {
+	background-color:rgba(100,100,100,0.5);
+	border-color: white;
+}
+
+button#guest-login-button {
 	background-color:rgba(100,100,100,0.5);
 	border-color: white;
 }
