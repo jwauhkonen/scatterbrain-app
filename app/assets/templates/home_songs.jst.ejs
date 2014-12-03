@@ -1,0 +1,13 @@
+<div class="panel panel-default">
+	<div class="panel-heading">Top Songs</div>
+	<table class="table">
+		<tbody>
+			<% songs.each(function(song) { %>
+				<tr>
+					<td><a href="#/songs/<%= song.id %>"> <%= song.get('title') %>
+					                <span class="badge"><%= song.taggings().models.length %></span></td>
+				</tr>
+			<% }) %>
+		</tbody>
+	</table>
+</div>

@@ -1,16 +1,14 @@
-Scatterbrain.Views.HomePage = Backbone.CompositeView.extend ({
-	template: JST["home_page"],
+Scatterbrain.Views.HomeSongsIndex = Backbone.View.extend ({
+	template: JST["songs/index"],
 	
 	initialize: function () {
 		this.listenTo(this.collection, "sync", this.sortSongsByTaggingCount);
 		this.listenTo(this.collection, "sync", this.render);
-		this.songsView = new Scatterbrain.Views.HomeSongsIndex({collection: Scatterbrain.Collections.songs});
 	},
 	
 	render: function () {
 		var renderedContent = this.template({songs: this.collection});
 		this.$el.html(renderedContent);
-		this.addSubview('#home-songs-index', this.songsView);
 		return this;
 	},
 	
