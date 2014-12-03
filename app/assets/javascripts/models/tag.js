@@ -26,7 +26,20 @@ Scatterbrain.Models.Tag = Backbone.Model.extend ({
 	},
 	
 	taggingsBySongId: function (id) {
-		return this.taggings().where({song_id: id})
+		var totalTaggings = [];
+		var thisTag = this;
+		var tagSegments = this.segments().where({song_id: id});
+		
+		tagSegments.forEach( function (tagSegment) {
+			
+			tagSegment.taggings().models.forEach( function (segTagging) {
+				if (segTagging.get('tag_id') === thisTag.id) {
+					totalTaggings.push(segTagging);
+				}
+			});
+		});
+	
+		return totalTaggings;
 	},
 	
 	parse: function (response) {

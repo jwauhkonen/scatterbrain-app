@@ -14,11 +14,13 @@ Scatterbrain.Views.TagsIndex = Backbone.View.extend ({
 	
 	
 	// This doesn't make any sense and needs to be fixed.
+	// or maybe it does, assuming I can get taggingsBySongId to work
 	sortTagSongs: function () {
 		this.collection.forEach( function (tag) {
 			tag.songs().models.sort( function (a, b) {
-				debugger
+				
 				if (tag.taggingsBySongId(a.id).length > tag.taggingsBySongId(b.id).length) {
+					console.log(tag.taggingsBySongId(b.id).length)
 					return -1;
 				}
 				if (tag.taggingsBySongId(a.id).length < tag.taggingsBySongId(b.id).length) {
