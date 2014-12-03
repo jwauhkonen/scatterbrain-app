@@ -42,6 +42,7 @@ gem 'bcrypt'
 gem 'backbone-on-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
+gem 'newrelic_rpm'
 
 group :development do
   gem 'better_errors'
