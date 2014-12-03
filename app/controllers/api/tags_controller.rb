@@ -3,7 +3,7 @@ module Api
     
     def index
       @tags = Tag.all
-      render json: @tags
+      render :index
     end
     
     def show

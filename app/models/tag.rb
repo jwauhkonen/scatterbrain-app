@@ -4,4 +4,6 @@ class Tag < ActiveRecord::Base
   has_many :taggings
   
   has_many :segments, through: :taggings
+  
+  has_many :songs, through: :segments
 end
