@@ -87,6 +87,10 @@ h1.song-title {
 	cursor: pointer;
 }
 
+.tagged:hover {
+	background-color: red;
+}
+
 .tag-list:hover {
 	cursor: pointer;
 }
