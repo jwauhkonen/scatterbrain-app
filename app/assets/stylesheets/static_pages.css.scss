@@ -45,8 +45,17 @@ h1.title {
 }
 
 div#home-songs-index {
-	width: 400px;
+	width: 500px;
 	float: left;
+	margin-left: 50px;
+}
+
+div#site-description {
+	float: right;
+	width: 500px;
+	margin-right: 50px;
+	font-size: 125%;
+	color: darkblue;
 }
 
 h1.song-title {
