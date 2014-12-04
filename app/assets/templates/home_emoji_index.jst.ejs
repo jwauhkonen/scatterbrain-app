@@ -6,12 +6,12 @@
 			<li class="home-emoji">:<%= tag.get('emoji_name') %>:</li>
 		<% }) %>
 	</ul>
-</div>
-
-<div>
-	<% tags.each( function (tag) { %>
-		<%= tag.get('name') %>---
-	<% })%>
+	
+	<ul class="home-emoji-names">
+		<% tags.each( function (tag) { %>
+			<li class="home-emoji-name"><%= tag.get('name') %></li>
+		<% }) %>
+	</ul>
 </div>
 
 <script>

@@ -56,7 +56,26 @@ ul.home-emoji-container {
 
 li.home-emoji {
 	display: table-cell;
+	text-align: center;
 	width: auto;
+}
+
+ul.home-emoji-names {
+	width: 100%;
+	display: table;
+	table-layout: fixed;
+}
+
+li.home-emoji-name {
+	display: table-cell;
+	width: auto;
+	font-size: 150%;
+	text-align: center;
+	
+	-webkit-animation:rainbow 1s infinite;
+	-ms-animation:rainbow 1s infinite;
+	-o-animation:rainbow 1s infinite;
+	animation:rainbow 1s infinite;
 }
 
 div#home-songs-index {
