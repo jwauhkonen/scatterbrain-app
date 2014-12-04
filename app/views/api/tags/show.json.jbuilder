@@ -1,4 +1,4 @@
-json.(@tag, :id, :name, :created_at, :updated_at)
+json.(@tag, :id, :name, :emoji_name, :created_at, :updated_at)
 
 json.segments @tag.segments do |segment|
   json.(segment, :id, :song_id, :quote, :start_idx, :end_idx, :created_at, :updated_at)

@@ -2,6 +2,16 @@
 
 <div class="home-emoji-container">
 	<% tags.each( function (tag) { %>
-		<%  %>
+		:<%= tag.get('emoji_name') %>:
 	<% }) %>
 </div>
+
+<div>
+	<% tags.each( function (tag) { %>
+		<%= tag.get('name') %>---
+	<% })%>
+</div>
+
+<script>
+	emojify.run();
+</script>

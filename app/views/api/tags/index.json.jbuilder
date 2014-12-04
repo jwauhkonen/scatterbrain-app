@@ -1,5 +1,5 @@
 json.array! (@tags) do |tag|
-  json.(tag, :id, :name, :created_at, :updated_at)
+  json.(tag, :id, :name, :emoji_name, :created_at, :updated_at)
   
   json.taggings tag.taggings, :id, :segment_id, :tag_id, :user_id, :created_at, :updated_at
  

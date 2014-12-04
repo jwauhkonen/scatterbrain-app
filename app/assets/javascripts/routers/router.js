@@ -27,6 +27,7 @@ Scatterbrain.Routers.Router = Backbone.Router.extend ({
 	
 	homePage: function () {
 		Scatterbrain.Collections.songs.fetch();
+		Scatterbrain.Collections.tags.fetch();
 		var homeView = new Scatterbrain.Views.HomePage();
 		this._swapView(homeView);
 	},

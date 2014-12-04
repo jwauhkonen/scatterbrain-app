@@ -5,5 +5,5 @@ json.array! (@songs) do |song|
   
   json.taggings song.taggings, :id, :segment_id, :tag_id, :user_id, :created_at, :updated_at
   
-  json.tags song.tags, :id, :name, :created_at, :updated_at
+  json.tags song.tags, :id, :name, :emoji_name, :created_at, :updated_at
 end

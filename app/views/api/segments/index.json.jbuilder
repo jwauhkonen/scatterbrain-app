@@ -4,7 +4,7 @@ json.array! (@segments) do |segment|
   json.song_title segment.song.title
   
   json.tags segment.tags do |tag|
-  	json.(tag, :id, :name, :created_at, :updated_at)
+  	json.(tag, :id, :name, :emoji_name, :created_at, :updated_at)
   end
   
   json.taggings segment.taggings do |tagging|
