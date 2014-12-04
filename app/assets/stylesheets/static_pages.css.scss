@@ -58,6 +58,12 @@ li.home-emoji {
 	display: table-cell;
 	text-align: center;
 	width: auto;
+	opacity: 0.8;
+}
+
+li.home-emoji:hover {
+	cursor: pointer;
+	opacity: 1;
 }
 
 ul.home-emoji-names {
@@ -95,9 +101,9 @@ div#site-description {
 	position: relative;
 	bottom: 10px;
 	width: 500px;
-	margin-top: 100px;
+	margin-top: 105px;
 	margin-right: 50px;
-	font-size: 125%;
+	font-size: 120%;
 	color: darkblue;
 }
 
