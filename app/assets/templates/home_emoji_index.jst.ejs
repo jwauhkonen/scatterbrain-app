@@ -3,13 +3,13 @@
 <div class="home-emoji-index">
 	<ul class="home-emoji-container">
 		<% tags.each( function (tag) { %>
-			<li class="home-emoji">:<%= tag.get('emoji_name') %>:</li>
+			<li class="home-emoji" data-id="<%= tag.id %>">:<%= tag.get('emoji_name') %>:</li>
 		<% }) %>
 	</ul>
 	
 	<ul class="home-emoji-names">
 		<% tags.each( function (tag) { %>
-			<li class="home-emoji-name"><%= tag.get('name') %></li>
+			<li class="home-emoji-name hidden" data-id="<%= tag.id %>"><%= tag.get('name') %></li>
 		<% }) %>
 	</ul>
 </div>

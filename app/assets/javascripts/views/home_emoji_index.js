@@ -5,10 +5,29 @@ Scatterbrain.Views.HomeEmojiIndex = Backbone.View.extend ({
 		this.listenTo(this.collection, "sync", this.render);
 	},
 	
+	events: {
+		"mouseenter li.home-emoji": "revealEmojiName",
+		"mouseleave li.home-emoji": "hideEmojiName"
+	},
+	
 	render: function () {
 		var renderedContent = this.template({tags: this.collection});
 		this.$el.html(renderedContent);
 		return this;
+	},
+	
+	revealEmojiName: function (event) {
+		var emoji = $(event.currentTarget);
+		var emojiId = emoji.data('id');
+		var selector = '.home-emoji-name[data-id |= ' + emojiId + ']';
+		$(selector).removeClass('hidden');
+	},
+	
+	hideEmojiName: function (event) {
+		var emoji = $(event.currentTarget);
+		var emojiId = emoji.data('id');
+		var selector = '.home-emoji-name[data-id |= ' + emojiId + ']';
+		$(selector).addClass('hidden');
 	}
 	
 });

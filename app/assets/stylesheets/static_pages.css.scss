@@ -78,14 +78,21 @@ li.home-emoji-name {
 	animation:rainbow 1s infinite;
 }
 
+div.home-panels {
+}
+
 div#home-songs-index {
 	width: 500px;
 	float: left;
+	position: relative;
+	bottom: 10px;
 	margin-left: 50px;
 }
 
 div#site-description {
 	float: right;
+	position: relative;
+	bottom: 10px;
 	width: 500px;
 	margin-right: 50px;
 	font-size: 125%;
