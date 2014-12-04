@@ -107,6 +107,11 @@ div#site-description {
 	color: darkblue;
 }
 
+div.not-popup {
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+
 h1.song-title {
 	color: white;
 }
@@ -117,12 +122,13 @@ h1.song-title {
 	outline: none;
 	resize: none;
 	color: white;
+	font-size: 110%;
 }
 
 .tag-popup {
 	position: fixed;
 	left: 600px;
-	top: 150px;
+	top: 250px;
 	color: white;
 }
 
