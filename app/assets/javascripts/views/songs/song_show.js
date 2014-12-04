@@ -6,7 +6,7 @@ Scatterbrain.Views.SongShow = Backbone.CompositeView.extend ({
 		this.listenTo(this.model, "sync", this.placeSegments);
 		this.lyricsView = new Scatterbrain.Views.SongLyricsShow({model: this.model});
 		this.popupView = new Scatterbrain.Views.SongPopupShow({model: this.model, collection: this.collection});
-		this.emojiView = new Scatterbrain.Views.SongEmojiIndex({model: this.model, collection: Scatterbrain.Collections.tags});
+		this.emojiView = new Scatterbrain.Views.SongEmojiIndex({model: this.model, collection: this.collection});
 	},
 	
 	events: {
@@ -53,5 +53,6 @@ Scatterbrain.Views.SongShow = Backbone.CompositeView.extend ({
 			});
 			$('.tag-popup').addClass('hidden');
 		}
+		this.model.fetch();
 	}
 });
