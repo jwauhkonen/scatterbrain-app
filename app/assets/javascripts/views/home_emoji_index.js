@@ -21,14 +21,14 @@ Scatterbrain.Views.HomeEmojiIndex = Backbone.View.extend ({
 		var emoji = $(event.currentTarget);
 		var emojiId = emoji.data('id');
 		var selector = '.home-emoji-name[data-id |= ' + emojiId + ']';
-		$(selector).removeClass('hidden');
+		$(selector).html(this.collection.get(emojiId).get('name'));
 	},
 	
 	hideEmojiName: function (event) {
 		var emoji = $(event.currentTarget);
 		var emojiId = emoji.data('id');
 		var selector = '.home-emoji-name[data-id |= ' + emojiId + ']';
-		$(selector).addClass('hidden');
+		$(selector).empty();
 	},
 	
 	navigateToTag: function (event) {
