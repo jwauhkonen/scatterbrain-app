@@ -7,7 +7,8 @@ Scatterbrain.Views.HomeEmojiIndex = Backbone.View.extend ({
 	
 	events: {
 		"mouseenter li.home-emoji": "revealEmojiName",
-		"mouseleave li.home-emoji": "hideEmojiName"
+		"mouseleave li.home-emoji": "hideEmojiName",
+		"click li.home-emoji": "navigateToTag"
 	},
 	
 	render: function () {
@@ -28,6 +29,13 @@ Scatterbrain.Views.HomeEmojiIndex = Backbone.View.extend ({
 		var emojiId = emoji.data('id');
 		var selector = '.home-emoji-name[data-id |= ' + emojiId + ']';
 		$(selector).addClass('hidden');
+	},
+	
+	navigateToTag: function (event) {
+		var emoji = $(event.currentTarget);
+		var emojiId = emoji.data('id');
+		var url = "tags/" + emojiId;
+		Backbone.history.navigate(url, {trigger: true})
 	}
 	
 });
