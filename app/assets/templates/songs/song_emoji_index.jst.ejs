@@ -1,0 +1,9 @@
+<ul class="song-emoji-container">
+	<% tags.each( function (tag) { %>
+		<li class="song-emoji" data-id="<%= tag.id %>">:<%= tag.get('emoji_name') %>:</li>
+	<% }) %>
+</ul>
+
+<script>
+	emojify.run();
+</script>

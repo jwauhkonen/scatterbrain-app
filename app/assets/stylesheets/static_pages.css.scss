@@ -125,6 +125,32 @@ h1.song-title {
 	font-size: 110%;
 }
 
+.song-emoji-index {
+	position: fixed;
+	left: 500px;
+	top: 70px;
+	color: white;
+}
+
+li.song-emoji {
+	display: table-cell;
+	text-align: center;
+	width: 40px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+img.emoji {
+	width: 40px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+ul.home-emoji-container {
+	width: 200px;
+	display: table;
+}
+
 .tag-popup {
 	position: fixed;
 	left: 600px;
