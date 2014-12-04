@@ -4,6 +4,12 @@
 	<% }) %>
 </ul>
 
+<ul class="song-emoji-counts">
+	<% tags.each( function (tag) { %>
+		<li class="song-emoji-count" data-id="<%= tag.id %>"><%= song.taggingsByTagId(tag.id).length %></li>
+	<% }) %>
+</ul>
+
 <script>
 	emojify.run();
 </script>

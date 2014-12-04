@@ -132,6 +132,12 @@ h1.song-title {
 	color: white;
 }
 
+ul.song-emoji-container {
+	width: 100%;
+	display: table;
+	table-layout: fixed;
+}
+
 li.song-emoji {
 	display: table-cell;
 	text-align: center;
@@ -146,9 +152,19 @@ img.emoji {
 	margin-left: 10px;
 }
 
-ul.home-emoji-container {
-	width: 200px;
+ul.song-emoji-counts {
+	width: 100%;
 	display: table;
+	table-layout: fixed;
+}
+
+li.song-emoji-count {
+	display: table-cell;
+	text-align: center;
+	width: 40px;
+	margin-right: 10px;
+	margin-left: 10px;
+	color: blue;
 }
 
 .tag-popup {
