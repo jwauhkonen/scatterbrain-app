@@ -6,6 +6,7 @@ Scatterbrain.Views.SongShow = Backbone.CompositeView.extend ({
 		this.listenTo(this.model, "sync", this.placeSegments);
 		this.lyricsView = new Scatterbrain.Views.SongLyricsShow({model: this.model});
 		this.popupView = new Scatterbrain.Views.SongPopupShow({model: this.model, collection: this.collection});
+		this.emojiView = new Scatterbrain.Views.SongEmojiIndex({collection: Scatterbrain.Collections.tags});
 	},
 	
 	events: {
@@ -18,6 +19,7 @@ Scatterbrain.Views.SongShow = Backbone.CompositeView.extend ({
 		this.$el.html(renderedContent);
 		this.addSubview('.lyrics', this.lyricsView);
 		this.addSubview('.tag-popup', this.popupView);
+		this.addSubview('.song-emoji-index', this.emojiView);
 		return this;
 	},
 	
