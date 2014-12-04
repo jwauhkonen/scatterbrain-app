@@ -1,9 +1,11 @@
 <h3 class="home-emoji-title">How are you feeling today?</h3><br>
 
-<div class="home-emoji-container">
-	<% tags.each( function (tag) { %>
-		:<%= tag.get('emoji_name') %>:
-	<% }) %>
+<div class="home-emoji-index">
+	<ul class="home-emoji-container">
+		<% tags.each( function (tag) { %>
+			<li class="home-emoji">:<%= tag.get('emoji_name') %>:</li>
+		<% }) %>
+	</ul>
 </div>
 
 <div>

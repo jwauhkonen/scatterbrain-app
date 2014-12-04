@@ -49,6 +49,16 @@ h3.home-emoji-title {
 	color: white;
 }
 
+ul.home-emoji-container {
+	width: 100%;
+	display: table;
+}
+
+li.home-emoji {
+	display: table-cell;
+	width: auto;
+}
+
 div#home-songs-index {
 	width: 500px;
 	float: left;
