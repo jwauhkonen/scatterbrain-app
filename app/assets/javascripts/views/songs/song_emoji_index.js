@@ -7,7 +7,13 @@ Scatterbrain.Views.SongEmojiIndex = Backbone.View.extend ({
 	},
 	
 	render: function () {
-		var renderedContent = this.template({song: this.model, tags: this.collection});
+		var renderedContent = this.template({segmentId: null, song: this.model, tags: this.collection});
+		this.$el.html(renderedContent);
+		return this;
+	},
+	
+	renderSegmentCounts: function (segmentId) {
+		var renderedContent = this.template({segmentId: segmentId, song: this.model, tags: this.collection});
 		this.$el.html(renderedContent);
 		return this;
 	}

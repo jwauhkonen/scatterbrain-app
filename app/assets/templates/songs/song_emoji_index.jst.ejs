@@ -6,7 +6,11 @@
 
 <ul class="song-emoji-counts">
 	<% tags.each( function (tag) { %>
-		<li class="song-emoji-count" data-id="<%= tag.id %>"><%= song.taggingsByTagId(tag.id).length %></li>
+		<% if (segmentId !== null) { %>
+			<li class="song-emoji-count" data-id="<%= tag.id %>">                                                   <%= new Scatterbrain.Collections.Taggings(song.taggingsBySegmentId(segmentId)).where({tag_id: tag.id}).length %>
+		<% } else { %>
+			<li class="song-emoji-count" data-id="<%= tag.id %>"><%= song.taggingsByTagId(tag.id).length %></li>
+		<% } %>
 	<% }) %>
 </ul>
 
