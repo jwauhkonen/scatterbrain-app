@@ -14,7 +14,7 @@
 		<tbody>
 			<% segments.each(function(segment) { %>
 				<tr>
-					<td><%= segment.escape('quote') %>
+					<td><a href="#/songs/<%= segment.get('song_id') %>"><%= segment.escape('quote') %>
 					       <span class="badge"><%= segment.taggings().models.length %></span></td>
 					<td><a href="#/songs/<%= segment.get('song_id') %>"><%= segment.escape('song_title') %></td>
 					<td><a href="#/tags/<%= segment.tags().models[0].id  %>">                                                                       <%= segment.tags().models[0].get('name') %></td>
