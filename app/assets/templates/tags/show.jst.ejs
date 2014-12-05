@@ -14,7 +14,7 @@
 		<tbody>
 			<% tag.segments().each(function(segment) { %>
 				<tr>
-					<td><a href="#/songs/<%= segment.get('song_id') %>"> <%= segment.get('quote') %></td>
+					<td class="index-segment"><a href="#/songs/<%= segment.get('song_id') %>"> <%= segment.get('quote') %></td>
 					<td><a href="#/songs/<%= segment.get('song_id') %>"> <%= segment.get('song_title') %></td>
 					<td><%= segment.taggingsByTagId(tag.id).length %></td>
 				</tr>

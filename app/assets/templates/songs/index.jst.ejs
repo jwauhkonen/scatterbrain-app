@@ -16,7 +16,7 @@
 					<td><a href="#/songs/<%= song.id %>"> <%= song.get('title') %>
 					                <span class="badge"><%= song.taggings().models.length %></span></td>
 					<% if (song.tags().models.length > 0) { %>
-						<td><a href="#/tags/<%= song.tags().models[0].id %>">                                                                         <%= song.tags().models[0].get('name') %></td>
+						<td class="index-tag"><a href="#/tags/<%= song.tags().models[0].id %>">                                                                         <%= song.tags().models[0].get('name') %></td>
 					<% } else { %>
 						<td>No Tags Yet!<td>
 					<% } %>

@@ -27,6 +27,15 @@ h3.title {
 	color: white;
 }
 
+.index-segment {
+	font-family: Georgia, serif;
+	font-weight: bold;
+}
+
+.index-tag {
+	font-weight: bold;
+}
+
 .navbar.navbar-default {
 	padding: 0;
 	margin: 0;
@@ -108,8 +117,12 @@ div#site-description {
 	width: 500px;
 	margin-top: 105px;
 	margin-right: 50px;
-	font-size: 120%;
+	font-size: 125%;
 	color: darkblue;
+}
+
+div#site-description .panel-body {
+	font-family: Georgia, serif;
 }
 
 div.not-popup {
@@ -128,6 +141,7 @@ h1.song-title {
 	resize: none;
 	color: white;
 	font-size: 110%;
+	font-family: Georgia, serif;
 }
 
 .song-emoji-index {
