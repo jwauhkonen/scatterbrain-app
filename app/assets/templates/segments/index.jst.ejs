@@ -17,7 +17,10 @@
 					<td class="index-segment"><a href="#/songs/<%= segment.get('song_id') %>"><%= segment.escape('quote') %>
 					       <span class="badge"><%= segment.taggings().models.length %></span></td>
 					<td><a href="#/songs/<%= segment.get('song_id') %>"><%= segment.escape('song_title') %></td>
-					<td class="index-tag"><a href="#/tags/<%= segment.tags().models[0].id  %>">                                                                       <%= segment.tags().models[0].get('name') %></td>
+					
+					<% if (segment.tags().models.length > 0 ) { %>
+						<td class="index-tag"><a href="#/tags/<%= segment.tags().models[0].id  %>">                                                                       <%= segment.tags().models[0].get('name') %></td>
+					<% } %>
 				</tr>
 			<% }) %>
 		</tbody>
