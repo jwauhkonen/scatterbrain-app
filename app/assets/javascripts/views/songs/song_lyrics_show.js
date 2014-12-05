@@ -63,7 +63,6 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 		var quote = range.toString();
 		var endPosition = parseInt(quote.length) + parseInt(startPosition);
 		$('.segment-quote').html('"' + quote + '"');
-		debugger
 		
 		var overlap = false;
 		this.model.segments().models.forEach( function(segment) {
