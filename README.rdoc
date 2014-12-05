@@ -1,28 +1,17 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Scatterbrain is a lyric tagging app, based on the functionality of Rap Genius. Users can select a portion of text from some song lyrics, or select an already tagged line, and tag it with one of eight emotions. Data about the number of tags can then be seen on the song show page and the various index pages.
 
-Things you may want to cover:
+The backend was made on rails and the frontend was made using backbone. The selecting and tagging functionality was done in JQuery.
 
-* Ruby version
+Planned features:
 
-* System dependencies
+* Search
 
-* Configuration
+* Sorting options for index views
 
-* Database creation
+* The ability upload new songs
 
-* Database initialization
+* Filled out user page, including data about tags they've made
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Have songs belong to albums and artists
