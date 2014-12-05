@@ -1,5 +1,9 @@
 == README
 
+
+http://www.scatterbrainlyrics.com
+
+
 Scatterbrain is a lyric tagging app, based on the functionality of Rap Genius. Users can select a portion of text from some song lyrics, or select an already tagged line, and tag it with one of eight emotions. Data about the number of tags can then be seen on the song show page and the various index pages.
 
 The backend was made on rails and the frontend was made using backbone. The selecting and tagging functionality was done in JQuery.
