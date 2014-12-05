@@ -55,10 +55,15 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 	handleSelect: function () {
 		var fullString = document.getElementsByClassName("taggable")[0].textContent;
 		var range = window.getSelection();
+		// The following line is causing a bug where the program finds the first instance of that range,
+		// so for example it will always choose the first instance of a repeated refrain. This has the 
+		// potential to break a lot of stuff, but finding the correct start and end idx is no trivial task,
+		// since the lyrics are broken up into several nodes, so the base offset or whatever is no good.
 		var startPosition = fullString.search(range);
 		var quote = range.toString();
 		var endPosition = parseInt(quote.length) + parseInt(startPosition);
 		$('.segment-quote').html('"' + quote + '"');
+		debugger
 		
 		var overlap = false;
 		this.model.segments().models.forEach( function(segment) {
