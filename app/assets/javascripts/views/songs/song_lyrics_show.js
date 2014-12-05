@@ -5,7 +5,7 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 	},
 	
 	events: {
-		"click .taggable": "checkForSelection"
+		
 	},
 	
 	render: function () {

@@ -11,7 +11,7 @@ Scatterbrain.Views.SongShow = Backbone.CompositeView.extend ({
 	
 	events: {
 		"click .tag-list": "createTagging",
-		"click .tagged": "revealPopup"
+		"click .taggable": "checkForSelection"
 	},
 	
 	render: function () {
@@ -21,6 +21,18 @@ Scatterbrain.Views.SongShow = Backbone.CompositeView.extend ({
 		this.addSubview('.tag-popup', this.popupView);
 		this.addSubview('.song-emoji-index', this.emojiView);
 		return this;
+	},
+	
+	checkForSelection: function (event) {
+		this.lyricsView.checkForSelection(event);
+		
+		if (event.target.className === "taggable") {
+			this.emojiView.render();
+		}
+		
+		if (event.target.className === "tagged") {
+			this.revealPopup(event);
+		}
 	},
 	
 	revealPopup: function (event) {
