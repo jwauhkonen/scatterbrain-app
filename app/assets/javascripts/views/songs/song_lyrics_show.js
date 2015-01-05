@@ -59,7 +59,7 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 		// so for example it will always choose the first instance of a repeated refrain. This has the 
 		// potential to break a lot of stuff, but finding the correct start and end idx is no trivial task,
 		// since the lyrics are broken up into several nodes, so the base offset or whatever is no good.
-		var startPosition = fullString.search(range);
+		var startPosition = fullString.search(range.anchorNode.textContent);
 		var quote = range.toString();
 		var endPosition = parseInt(quote.length) + parseInt(startPosition);
 		$('.segment-quote').html('"' + quote + '"');
