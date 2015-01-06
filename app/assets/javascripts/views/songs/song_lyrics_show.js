@@ -88,6 +88,10 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 	},
 	
 	siblingOffset: function (node) {
+		if (node === null) {
+			return 0;
+		}
+		
 		if (node.previousSibling === null) {
 			return node.textContent.length;
 		}
