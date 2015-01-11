@@ -1,13 +1,6 @@
 Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 	template: JST["songs/lyrics_show"],
 	
-	initialize: function () {
-	},
-	
-	events: {
-		
-	},
-	
 	render: function () {
 		var renderedContent = this.template({
 			song: this.model
@@ -83,6 +76,7 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 				start_idx: startPosition, 
 				end_idx: endPosition
 			});	
+		
 		}
 		
 	},
