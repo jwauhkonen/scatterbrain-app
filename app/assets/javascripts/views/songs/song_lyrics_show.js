@@ -8,6 +8,13 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 		this.$el.html(renderedContent);
 		return this;
 	},
+
+  // placeSegments gets called when song model syncs
+
+	placeSegments: function () {
+		this.model.segments().each(this.placeSegment.bind(this));
+		
+	},
 	
 	placeSegment: function (segment) {
 		var tagArea = this.$('.taggable')[0].firstChild;
@@ -22,11 +29,6 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 		
 		range.deleteContents();
 		range.insertNode($seg[0]);		
-	},
-	
-	placeSegments: function () {
-		this.model.segments().each(this.placeSegment.bind(this));
-		
 	},
 	
 	checkForSelection: function (event) {
@@ -53,6 +55,7 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 		var endPosition = parseInt(quote.length) + parseInt(startPosition);
 		$('.segment-quote').html('"' + quote + '"');
 		
+    // check for if the selection overlaps with any other selection
 		var overlap = false;
 		this.model.segments().models.forEach( function(segment) {
 			if ((segment.get('end_idx') > startPosition) && (segment.get('start_idx') < startPosition)) {
@@ -62,7 +65,8 @@ Scatterbrain.Views.SongLyricsShow = Backbone.View.extend ({
 				overlap = true;
 			}
 		});
-		
+
+		// only reveal tag popup if there's no overlap
 		if (overlap) {
 			$('.tag-popup').addClass('hidden');
 		} else {

@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+// Header
+
+
 html {
 	background: url(http://www.psdgraphics.com/file/colorful-triangles-background.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
@@ -57,6 +61,11 @@ h3.title {
 	font-size: 1em;
 	color: blue;
 }
+
+
+// Home Page
+
+
 
 h3.home-emoji-title {
 	text-align: center;
@@ -124,6 +133,11 @@ div#site-description {
 div#site-description .panel-body {
 	font-family: Georgia, serif;
 }
+
+
+// Song Show Page
+
+
 
 div.not-popup {
 	margin-left: 20px;

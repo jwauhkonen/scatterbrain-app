@@ -40,7 +40,7 @@ Scatterbrain.Views.SongShow = Backbone.CompositeView.extend ({
 		$('.segment-quote').html('"' + event.target.innerHTML + '"');
 		this.selectedSegment = $(event.target).data('id');
 		
-		// also switch emoji index to segment data
+		// emoji index shows tag counts for the selected segment
 		this.emojiView.renderSegmentCounts(this.selectedSegment);
 	},
 	
