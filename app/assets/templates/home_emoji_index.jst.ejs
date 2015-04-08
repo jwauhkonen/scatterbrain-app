@@ -9,7 +9,7 @@
 	
 	<ul class="home-emoji-names">
 		<% tags.each( function (tag) { %>
-			<li class="home-emoji-name index-tag" data-id="<%= tag.id %>"></li>
+			<li class="home-emoji-name index-tag" data-id="<%= tag.id %>"><%= tag.get('name') %></li>
 		<% }) %>
 	</ul>
 </div>
