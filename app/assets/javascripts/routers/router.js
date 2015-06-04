@@ -20,6 +20,7 @@ Scatterbrain.Routers.Router = Backbone.Router.extend ({
 		"users/:id": "userShow",
 		"songs": "songsIndex",
 		"songs/:id": "songShow",
+		"songs/new": "songNew",
 		"segments": "segmentsIndex",
 		"tags": "tagsIndex",
 		"tags/:id": "tagShow"
@@ -55,6 +56,11 @@ Scatterbrain.Routers.Router = Backbone.Router.extend ({
 		Scatterbrain.Collections.tags.fetch();
 		var showView = new Scatterbrain.Views.SongShow({model: song, collection: Scatterbrain.Collections.tags});
 		this._swapView(showView);
+	},
+	
+	songNew: function () {
+		var newView = new Scatterbrain.Views.NewSong({collection: Scatterbrain.Collections.songs});
+		this._swapView(newView);
 	},
 	
 	segmentsIndex: function () {
