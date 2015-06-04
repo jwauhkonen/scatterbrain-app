@@ -284,3 +284,103 @@ animation:rainbow 1s infinite;
 90% {color: #8000ff;}
 100% {color: #ff0080;}
 }
+
+
+// New Song Page
+
+
+
+.new-song-title {
+	border-style: solid;
+	background-color: transparent;
+	color: white;
+	font-size: 250%;
+	margin: 0.67em 0;
+	border-color: white;
+	border-width: 2px;
+}
+
+.new-song-lyrics {
+	background-color: transparent;
+	color: white;
+	width: 500px;
+	height: 800px;
+	font-size: 110%;
+	font-family: Georgia, serif;
+	border-color: white;
+	border-width: 2px;
+}
+
+.add-song-button {
+	border-style: solid;
+	background:transparent;
+	border-color: white;
+	border-width: 3px;
+	border-radius: 10px;
+	position: fixed;
+	left: 600px;
+	top: 250px;
+	width: 150px;
+	height: 80px;
+	font-size: 25px;
+	color: white;
+}
+
+.add-song-button:hover {
+	-webkit-animation:rainbow 1s infinite;
+	-ms-animation:rainbow 1s infinite;
+	-o-animation:rainbow 1s infinite;
+	animation:rainbow 1s infinite;
+	}
+	@-webkit-keyframes rainbow {
+	0% {color: #ff0000;}
+	10% {color: #ff8000;}
+	20% {color: #ffff00;}
+	30% {color: #80ff00;}
+	40% {color: #00ff00;}
+	50% {color: #00ff80;}
+	60% {color: #00ffff;}
+	70% {color: #0080ff;}
+	80% {color: #0000ff;}
+	90% {color: #8000ff;}
+	100% {color: #ff0080;}
+	}
+	@-ms-keyframes rainbow {
+	0% {color: #ff0000;}
+	10% {color: #ff8000;}
+	20% {color: #ffff00;}
+	30% {color: #80ff00;}
+	40% {color: #00ff00;}
+	50% {color: #00ff80;}
+	60% {color: #00ffff;}
+	70% {color: #0080ff;}
+	80% {color: #0000ff;}
+	90% {color: #8000ff;}
+	100% {color: #ff0080;}
+	}
+	@-o-keyframes rainbow {
+	0% {color: #ff0000;}
+	10% {color: #ff8000;}
+	20% {color: #ffff00;}
+	30% {color: #80ff00;}
+	40% {color: #00ff00;}
+	50% {color: #00ff80;}
+	60% {color: #00ffff;}
+	70% {color: #0080ff;}
+	80% {color: #0000ff;}
+	90% {color: #8000ff;}
+	100% {color: #ff0080;}
+	}
+	@keyframes rainbow {
+	0% {color: #ff0000;}
+	10% {color: #ff8000;}
+	20% {color: #ffff00;}
+	30% {color: #80ff00;}
+	40% {color: #00ff00;}
+	50% {color: #00ff80;}
+	60% {color: #00ffff;}
+	70% {color: #0080ff;}
+	80% {color: #0000ff;}
+	90% {color: #8000ff;}
+	100% {color: #ff0080;}
+}
