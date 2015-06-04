@@ -14,8 +14,6 @@ Planned features:
 
 * Sorting options for index views
 
-* The ability upload new songs
-
 * Filled out user page, including data about tags they've made
 
 * Have songs belong to albums and artists
