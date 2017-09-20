@@ -3,13 +3,12 @@
 	<h1 class="sign-in-or-up-title">Welcome To Scatterbrain!</h1>
 
 	<form action="/users" class="signup-form" method="post">
-	
-		<h3 class="form-header">Sign Up</h3><br>
+
 		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 	
 		<label class="form-field">Email
 			<input type="text" name="user[email]">
-		</label><br>
+		</label>
 	
 		<label class="form-field">Password
 			<input type="password" name="user[password]">
@@ -24,7 +23,7 @@
 	
 			<input type="hidden" name="user[password]" value="password">
 		
-			<input type="submit" value="Guest Login" class="btn btn-primary">
+			<input type="submit" value="Guest Login" class="btn btn-primary guest-login-button">
 		</form>
 
 	</form>

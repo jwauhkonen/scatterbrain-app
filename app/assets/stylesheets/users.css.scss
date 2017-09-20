@@ -7,25 +7,33 @@
 }
 
 .signin-form {
-	width: 400px;
-	height: 100px;
 	background-color:rgba(100,100,100,0);
-
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-
-	margin: auto;
+	float: right;
+	width: 100%;
+	font-size: 1.1em;
+	margin-top: 200px;
 }
 
 label.form-field {
-	margin-left: auto;
-	margin-right: auto;
+	margin-left: 5px;
+	color: white;
+}
+
+label.form-field input {
+	color: black;
 }
 
 input.btn.btn-primary {
-	background-color:rgba(100,100,100,0.5);
-	border-color: white;
+	font-weight: bold;
+	color: white;
+	background-color: rgba(100, 100 ,100 , 0.5);
+	border: 2px solid white;
+	margin-top: 5px;
+}
+
+input.btn.btn-primary.guest-login-button {
+	font-size: 1.5em;
+	display: block;
+	margin: auto;
+	margin-top: 100px;
 }
