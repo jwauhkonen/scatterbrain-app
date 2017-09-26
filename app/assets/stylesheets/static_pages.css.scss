@@ -2,24 +2,137 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-// Header
-
+// General
 
 html {
-	background: url(http://www.psdgraphics.com/file/colorful-triangles-background.jpg) no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
+	background: #222222;
 }
 
 div#content {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	top: 52px;
+	padding-bottom: 40px;
+	color: white;
 	background: url(http://www.psdgraphics.com/file/colorful-triangles-background.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	overflow: auto;
 }
+
+th {
+	font-size: 1.2em;
+}
+
+@-webkit-keyframes rainbow-background {
+	0% {background-color: #ff0000;}
+	10% {background-color: #ff8000;}
+	20% {background-color: #ffff00;}
+	30% {background-color: #80ff00;}
+	40% {background-color: #00ff00;}
+	50% {background-color: #00ff80;}
+	60% {background-color: #00ffff;}
+	70% {background-color: #0080ff;}
+	80% {background-color: #0000ff;}
+	90% {background-color: #8000ff;}
+	100% {background-color: #ff0080;}
+}
+@-ms-keyframes rainbow-background {
+	0% {background-color: #ff0000;}
+	10% {background-color: #ff8000;}
+	20% {background-color: #ffff00;}
+	30% {background-color: #80ff00;}
+	40% {background-color: #00ff00;}
+	50% {background-color: #00ff80;}
+	60% {background-color: #00ffff;}
+	70% {background-color: #0080ff;}
+	80% {background-color: #0000ff;}
+	90% {background-color: #8000ff;}
+	100% {background-color: #ff0080;}
+}
+@-o-keyframes rainbow-background {
+	0% {background-color: #ff0000;}
+	10% {background-color: #ff8000;}
+	20% {background-color: #ffff00;}
+	30% {background-color: #80ff00;}
+	40% {background-color: #00ff00;}
+	50% {background-color: #00ff80;}
+	60% {background-color: #00ffff;}
+	70% {background-color: #0080ff;}
+	80% {background-color: #0000ff;}
+	90% {background-color: #8000ff;}
+	100% {background-color: #ff0080;}
+}
+@keyframes rainbow-background {
+	0% {background-color: #ff0000;}
+	10% {background-color: #ff8000;}
+	20% {background-color: #ffff00;}
+	30% {background-color: #80ff00;}
+	40% {background-color: #00ff00;}
+	50% {background-color: #00ff80;}
+	60% {background-color: #00ffff;}
+	70% {background-color: #0080ff;}
+	80% {background-color: #0000ff;}
+	90% {background-color: #8000ff;}
+	100% {background-color: #ff0080;}
+}
+
+@-webkit-keyframes rainbow {
+	0% {color: #ff0000;}
+	10% {color: #ff8000;}
+	20% {color: #ffff00;}
+	30% {color: #80ff00;}
+	40% {color: #00ff00;}
+	50% {color: #00ff80;}
+	60% {color: #00ffff;}
+	70% {color: #0080ff;}
+	80% {color: #0000ff;}
+	90% {color: #8000ff;}
+	100% {color: #ff0080;}
+}
+@-ms-keyframes rainbow {
+	0% {color: #ff0000;}
+	10% {color: #ff8000;}
+	20% {color: #ffff00;}
+	30% {color: #80ff00;}
+	40% {color: #00ff00;}
+	50% {color: #00ff80;}
+	60% {color: #00ffff;}
+	70% {color: #0080ff;}
+	80% {color: #0000ff;}
+	90% {color: #8000ff;}
+	100% {color: #ff0080;}
+}
+@-o-keyframes rainbow {
+	0% {color: #ff0000;}
+	10% {color: #ff8000;}
+	20% {color: #ffff00;}
+	30% {color: #80ff00;}
+	40% {color: #00ff00;}
+	50% {color: #00ff80;}
+	60% {color: #00ffff;}
+	70% {color: #0080ff;}
+	80% {color: #0000ff;}
+	90% {color: #8000ff;}
+	100% {color: #ff0080;}
+}
+@keyframes rainbow {
+	0% {color: #ff0000;}
+	10% {color: #ff8000;}
+	20% {color: #ffff00;}
+	30% {color: #80ff00;}
+	40% {color: #00ff00;}
+	50% {color: #00ff80;}
+	60% {color: #00ffff;}
+	70% {color: #0080ff;}
+	80% {color: #0000ff;}
+	90% {color: #8000ff;}
+	100% {color: #ff0080;}
+}
+
+// Header
 
 h1.title {
 	text-align: center;
@@ -232,59 +345,6 @@ li.song-emoji-count {
 -o-animation:rainbow 1s infinite;
 animation:rainbow 1s infinite;
 }
-@-webkit-keyframes rainbow {
-0% {color: #ff0000;}
-10% {color: #ff8000;}
-20% {color: #ffff00;}
-30% {color: #80ff00;}
-40% {color: #00ff00;}
-50% {color: #00ff80;}
-60% {color: #00ffff;}
-70% {color: #0080ff;}
-80% {color: #0000ff;}
-90% {color: #8000ff;}
-100% {color: #ff0080;}
-}
-@-ms-keyframes rainbow {
-0% {color: #ff0000;}
-10% {color: #ff8000;}
-20% {color: #ffff00;}
-30% {color: #80ff00;}
-40% {color: #00ff00;}
-50% {color: #00ff80;}
-60% {color: #00ffff;}
-70% {color: #0080ff;}
-80% {color: #0000ff;}
-90% {color: #8000ff;}
-100% {color: #ff0080;}
-}
-@-o-keyframes rainbow {
-0% {color: #ff0000;}
-10% {color: #ff8000;}
-20% {color: #ffff00;}
-30% {color: #80ff00;}
-40% {color: #00ff00;}
-50% {color: #00ff80;}
-60% {color: #00ffff;}
-70% {color: #0080ff;}
-80% {color: #0000ff;}
-90% {color: #8000ff;}
-100% {color: #ff0080;}
-}
-@keyframes rainbow {
-0% {color: #ff0000;}
-10% {color: #ff8000;}
-20% {color: #ffff00;}
-30% {color: #80ff00;}
-40% {color: #00ff00;}
-50% {color: #00ff80;}
-60% {color: #00ffff;}
-70% {color: #0080ff;}
-80% {color: #0000ff;}
-90% {color: #8000ff;}
-100% {color: #ff0080;}
-}
-
 
 // New Song Page
 
@@ -348,108 +408,3 @@ animation:rainbow 1s infinite;
 	-o-animation:rainbow 1s infinite;
 	animation:rainbow 1s infinite;
 	}
-	@-webkit-keyframes rainbow {
-	0% {color: #ff0000;}
-	10% {color: #ff8000;}
-	20% {color: #ffff00;}
-	30% {color: #80ff00;}
-	40% {color: #00ff00;}
-	50% {color: #00ff80;}
-	60% {color: #00ffff;}
-	70% {color: #0080ff;}
-	80% {color: #0000ff;}
-	90% {color: #8000ff;}
-	100% {color: #ff0080;}
-	}
-	@-ms-keyframes rainbow {
-	0% {color: #ff0000;}
-	10% {color: #ff8000;}
-	20% {color: #ffff00;}
-	30% {color: #80ff00;}
-	40% {color: #00ff00;}
-	50% {color: #00ff80;}
-	60% {color: #00ffff;}
-	70% {color: #0080ff;}
-	80% {color: #0000ff;}
-	90% {color: #8000ff;}
-	100% {color: #ff0080;}
-	}
-	@-o-keyframes rainbow {
-	0% {color: #ff0000;}
-	10% {color: #ff8000;}
-	20% {color: #ffff00;}
-	30% {color: #80ff00;}
-	40% {color: #00ff00;}
-	50% {color: #00ff80;}
-	60% {color: #00ffff;}
-	70% {color: #0080ff;}
-	80% {color: #0000ff;}
-	90% {color: #8000ff;}
-	100% {color: #ff0080;}
-	}
-	@keyframes rainbow {
-	0% {color: #ff0000;}
-	10% {color: #ff8000;}
-	20% {color: #ffff00;}
-	30% {color: #80ff00;}
-	40% {color: #00ff00;}
-	50% {color: #00ff80;}
-	60% {color: #00ffff;}
-	70% {color: #0080ff;}
-	80% {color: #0000ff;}
-	90% {color: #8000ff;}
-	100% {color: #ff0080;}
-}
-
-@-webkit-keyframes rainbow-background {
-0% {background-color: #ff0000;}
-10% {background-color: #ff8000;}
-20% {background-color: #ffff00;}
-30% {background-color: #80ff00;}
-40% {background-color: #00ff00;}
-50% {background-color: #00ff80;}
-60% {background-color: #00ffff;}
-70% {background-color: #0080ff;}
-80% {background-color: #0000ff;}
-90% {background-color: #8000ff;}
-100% {background-color: #ff0080;}
-}
-@-ms-keyframes rainbow-background {
-0% {background-color: #ff0000;}
-10% {background-color: #ff8000;}
-20% {background-color: #ffff00;}
-30% {background-color: #80ff00;}
-40% {background-color: #00ff00;}
-50% {background-color: #00ff80;}
-60% {background-color: #00ffff;}
-70% {background-color: #0080ff;}
-80% {background-color: #0000ff;}
-90% {background-color: #8000ff;}
-100% {background-color: #ff0080;}
-}
-@-o-keyframes rainbow-background {
-0% {background-color: #ff0000;}
-10% {background-color: #ff8000;}
-20% {background-color: #ffff00;}
-30% {background-color: #80ff00;}
-40% {background-color: #00ff00;}
-50% {background-color: #00ff80;}
-60% {background-color: #00ffff;}
-70% {background-color: #0080ff;}
-80% {background-color: #0000ff;}
-90% {background-color: #8000ff;}
-100% {background-color: #ff0080;}
-}
-@keyframes rainbow-background {
-0% {background-color: #ff0000;}
-10% {background-color: #ff8000;}
-20% {background-color: #ffff00;}
-30% {background-color: #80ff00;}
-40% {background-color: #00ff00;}
-50% {background-color: #00ff80;}
-60% {background-color: #00ffff;}
-70% {background-color: #0080ff;}
-80% {background-color: #0000ff;}
-90% {background-color: #8000ff;}
-100% {background-color: #ff0080;}
-}

@@ -35,3 +35,30 @@ body {
 	font-family: 'Lato', sans-serif;
 }
 
+a {
+	font-weight: bold;
+	color: #f7e6bf;
+}
+
+a:hover {
+	text-decoration: none;
+	color: white;
+}
+
+.panel {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.panel-title {
+	font-weight: bold;
+}
+
+.panel-body {
+	color: white;
+}
+
+.badge {
+	background-color: white;
+	color: black;
+}
+
