@@ -3,6 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .signup-page {
+	background: #34363a; /* Old browsers */
+	background: -moz-linear-gradient(top, #34363a 0%, #000000 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #34363a 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #34363a 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34363a', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	top: 52px;
 	text-align: center;
 }
 
@@ -15,7 +24,6 @@
 }
 
 h1.sign-in-or-up-title {
-	background: #222222;
 	overflow: auto;
 	padding: 0;
 	margin: 0;
