@@ -244,6 +244,19 @@ div#site-description {
 	color: darkblue;
 }
 
+@media (max-width: 1115px) {
+	div#home-songs-index {
+		margin: 40px 10%;
+		width: auto;
+		float: none;
+	}
+
+	div#site-description {
+		margin: 0 10%;
+		width: auto;
+	}
+}
+
 div#site-description .panel-body {
 	font-family: Georgia, serif;
 }
